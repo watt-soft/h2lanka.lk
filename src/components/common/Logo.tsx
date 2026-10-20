@@ -18,7 +18,7 @@ export const Logo: React.FC<LogoProps> = ({
   // Horizontal layout: Mark image on left + Typography on right
   if (layout === 'horizontal') {
     const markDimensions = {
-      sm: { cls: 'h-10 w-10 sm:h-11 sm:w-11', px: 10, titleCls: 'text-lg sm:text-xl', subCls: 'text-[10px] sm:text-[11px]' },
+      sm: { cls: 'h-10 w-10 sm:h-11 sm:w-11', px: 44, titleCls: 'text-lg sm:text-xl', subCls: 'text-[10px] sm:text-[11px]' },
       md: { cls: 'h-12 w-12 sm:h-14 sm:w-14', px: 56, titleCls: 'text-xl sm:text-2xl', subCls: 'text-xs sm:text-sm' },
       lg: { cls: 'h-16 w-16 sm:h-20 sm:w-20', px: 80, titleCls: 'text-2xl sm:text-3xl', subCls: 'text-sm sm:text-base' },
       xl: { cls: 'h-20 w-20 sm:h-24 sm:w-24', px: 96, titleCls: 'text-3xl sm:text-4xl', subCls: 'text-base sm:text-lg' },
