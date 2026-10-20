@@ -12,7 +12,7 @@ export const HeroVisual: React.FC = () => {
         <img
           src={getAssetPath('/hero-clean.jpg')}
           alt="H2 Lanka Clean Green Hydrogen Facility"
-          className="w-full h-full object-cover object-[70%_center] lg:object-right-center"
+          className="w-full h-full object-cover object-[72%_75%] sm:object-[70%_center] lg:object-right-center"
           loading="eager"
           fetchPriority="high"
           decoding="async"
@@ -29,8 +29,9 @@ export const HeroVisual: React.FC = () => {
       {/* Subtle top shade to ground the navbar */}
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white/70 via-white/20 to-transparent" />
 
-      {/* Subtle bottom gradient to smoothly transition into the value pillars */}
-      <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-white via-white/60 to-transparent" />
+      {/* Gentle bottom gradient: lightened to preserve visibility of the bottom landscape */}
+      <div className="hidden md:block absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white/50 via-white/15 to-transparent" />
+      <div className="md:hidden absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white/35 via-transparent to-transparent" />
 
       {/* Live Hydrogen Particle & Molecular Motion Engine (Hero tier) */}
       <HydrogenBackground variant="hero" interactive={true} className="z-10" />

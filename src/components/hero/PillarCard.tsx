@@ -12,22 +12,22 @@ interface PillarCardProps {
 export const PillarCard: React.FC<PillarCardProps> = ({ pillar, hasDivider = false }) => {
   return (
     <motion.div
-      whileHover={{ y: -4 }}
+      whileHover={{ y: -3 }}
       transition={{ duration: 0.25, ease: 'easeOut' }}
       className={cn(
-        'group relative flex items-center gap-4 sm:gap-5 p-4 sm:p-6 lg:p-7 rounded-2xl transition-all duration-300',
-        hasDivider && 'lg:border-r lg:border-slate-100'
+        'group relative flex items-center gap-3 sm:gap-4 md:gap-3 lg:gap-3.5 p-3.5 sm:p-5 md:py-2 md:px-3 lg:py-2.5 lg:px-4 rounded-xl md:rounded-2xl transition-all duration-300',
+        hasDivider && 'md:border-r md:border-slate-100'
       )}
     >
       {/* Icon Badge */}
       <BadgeIcon type={pillar.badgeType} />
 
       {/* Content */}
-      <div className="flex flex-col">
-        <h3 className="text-lg sm:text-xl font-bold text-[#083870] group-hover:text-[#094792] transition-colors duration-200">
+      <div className="flex flex-col min-w-0">
+        <h3 className="text-base sm:text-lg md:text-xs lg:text-sm font-bold text-[#083870] group-hover:text-[#094792] transition-colors duration-200 leading-snug">
           {pillar.title}
         </h3>
-        <p className="mt-1 text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xs">
+        <p className="mt-0.5 text-xs md:text-[11px] lg:text-xs text-slate-600 leading-relaxed max-w-xs line-clamp-2">
           {pillar.description}
         </p>
       </div>

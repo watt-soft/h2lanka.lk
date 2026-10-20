@@ -12,11 +12,11 @@ export const BadgeIcon: React.FC<BadgeIconProps> = ({ type, className }) => {
     return (
       <div
         className={cn(
-          'w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300 group-hover:scale-110',
+          'w-12 h-12 md:w-10 md:h-10 lg:w-11 lg:h-11 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300 group-hover:scale-110',
           className
         )}
       >
-        <Leaf className="w-7 h-7 sm:w-8 sm:h-8 text-[#10B981] stroke-[1.8]" />
+        <Leaf className="w-6 h-6 md:w-5 md:h-5 lg:w-5.5 lg:h-5.5 text-[#10B981] stroke-[1.8]" />
       </div>
     );
   }
@@ -25,13 +25,13 @@ export const BadgeIcon: React.FC<BadgeIconProps> = ({ type, className }) => {
     return (
       <div
         className={cn(
-          'w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300 group-hover:scale-110',
+          'w-12 h-12 md:w-10 md:h-10 lg:w-11 lg:h-11 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300 group-hover:scale-110',
           className
         )}
       >
         <div className="flex items-baseline font-extrabold text-[#094792] tracking-tighter leading-none select-none">
-          <span className="text-2xl sm:text-3xl">H</span>
-          <span className="text-base sm:text-lg -ml-0.5">2</span>
+          <span className="text-xl md:text-lg lg:text-xl">H</span>
+          <span className="text-sm md:text-xs lg:text-sm -ml-0.5">2</span>
         </div>
       </div>
     );
@@ -41,11 +41,11 @@ export const BadgeIcon: React.FC<BadgeIconProps> = ({ type, className }) => {
   return (
     <div
       className={cn(
-        'w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300 group-hover:scale-110',
+        'w-12 h-12 md:w-10 md:h-10 lg:w-11 lg:h-11 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300 group-hover:scale-110',
         className
       )}
     >
-      <Users className="w-7 h-7 sm:w-8 sm:h-8 text-[#10B981] stroke-[1.8]" />
+      <Users className="w-6 h-6 md:w-5 md:h-5 lg:w-5.5 lg:h-5.5 text-[#10B981] stroke-[1.8]" />
     </div>
   );
 };

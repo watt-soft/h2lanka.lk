@@ -29,10 +29,10 @@ export const HeroContent: React.FC = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="max-w-xl xl:max-w-2xl py-8 sm:py-12 lg:py-16"
+      className="max-w-xl xl:max-w-2xl py-6 sm:py-8 md:py-3 lg:py-4"
     >
       {/* Brand Logo Above Headline */}
-      <motion.div variants={itemVariants} className="mb-6 sm:mb-8 flex justify-start">
+      <motion.div variants={itemVariants} className="mb-4 sm:mb-6 md:mb-4 lg:mb-5 flex justify-start">
         <Logo layout="vertical" variant="full" size="xl" className="justify-start -ml-2 drop-shadow-md" />
       </motion.div>
 

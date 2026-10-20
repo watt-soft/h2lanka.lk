@@ -20,13 +20,13 @@ export const App: React.FC = () => {
           scale: 1,
           transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] },
         }}
-        className="relative min-h-screen bg-white text-slate-900 font-sans antialiased selection:bg-[#094792] selection:text-white overflow-x-hidden"
+        className="relative min-h-screen bg-white text-slate-900 font-sans antialiased selection:bg-[#094792] selection:text-white"
       >
         {/* Navigation Bar */}
         <Navbar />
 
         {/* Main Hero Section */}
-        <main>
+        <main className="relative pb-8 md:pb-16 lg:pb-20">
           <Hero />
         </main>
       </motion.div>
