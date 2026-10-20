@@ -27,10 +27,10 @@ export const Navbar: React.FC = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        'fixed top-0 left-0 right-0 z-50 border-b transition-[background-color,border-color,box-shadow,padding] duration-300',
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100 py-2 sm:py-2.5'
-          : 'bg-transparent py-3 sm:py-4'
+          ? 'bg-white/95 backdrop-blur-md shadow-sm border-slate-100 py-2 sm:py-2.5'
+          : 'bg-transparent border-transparent shadow-none py-3 sm:py-4'
       )}
     >
       <Container size="xl">

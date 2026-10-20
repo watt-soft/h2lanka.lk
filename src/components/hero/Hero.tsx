@@ -8,7 +8,7 @@ export const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col justify-between pt-10 sm:pt-15 lg:pt-4 pb-24 sm:pb-28 overflow-hidden bg-slate-50/50"
+      className="relative min-h-screen flex flex-col justify-between pt-6 sm:pt-8 lg:pt-4 pb-24 sm:pb-28 overflow-hidden bg-slate-50/50"
     >
       {/* Background Visual Landscape */}
       <HeroVisual />

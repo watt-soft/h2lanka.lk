@@ -41,10 +41,10 @@ export const HeroContent: React.FC = () => {
         variants={itemVariants}
         className="text-4xl sm:text-5xl lg:text-[62px] xl:text-[68px] font-extrabold tracking-tight leading-[1.08]"
       >
-        <span className="block text-[#083870]">
+        <span className="block text-[#062A56]">
           Powering Sri Lanka’s
         </span>
-        <span className="block text-[#48A23F] mt-1 sm:mt-2">
+        <span className="block text-[#15803D] mt-1 sm:mt-2">
           Hydrogen Future
         </span>
       </motion.h1>
@@ -52,7 +52,7 @@ export const HeroContent: React.FC = () => {
       {/* Subtitle */}
       <motion.p
         variants={itemVariants}
-        className="mt-6 text-base sm:text-lg lg:text-xl text-slate-600 font-normal leading-relaxed max-w-lg"
+        className="mt-6 text-base sm:text-lg lg:text-xl text-slate-800 font-medium leading-relaxed max-w-lg"
       >
         Accelerating the transition to a clean, secure and sustainable energy economy.
       </motion.p>
