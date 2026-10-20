@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, type Variants } from 'framer-motion';
 import Button from '../common/Button';
+import Logo from '../common/Logo';
 
 export const HeroContent: React.FC = () => {
   const containerVariants: Variants = {
@@ -28,8 +29,13 @@ export const HeroContent: React.FC = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="max-w-xl xl:max-w-2xl py-12 sm:py-16 lg:py-24"
+      className="max-w-xl xl:max-w-2xl py-8 sm:py-12 lg:py-16"
     >
+      {/* Brand Logo Above Headline */}
+      <motion.div variants={itemVariants} className="mb-6 sm:mb-8 flex justify-start">
+        <Logo layout="vertical" variant="full" size="xl" className="justify-start -ml-2 drop-shadow-md" />
+      </motion.div>
+
       {/* Hero Headline */}
       <motion.h1
         variants={itemVariants}

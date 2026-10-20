@@ -12,6 +12,9 @@ export const HeroVisual: React.FC = () => {
           src={getAssetPath('/hero-clean.jpg')}
           alt="H2 Lanka Clean Green Hydrogen Facility"
           className="w-full h-full object-cover object-[70%_center] lg:object-right-center"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
       </picture>
 

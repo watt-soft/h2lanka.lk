@@ -29,8 +29,8 @@ export const Navbar: React.FC = () => {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
-          ? 'bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100 py-3'
-          : 'bg-transparent py-5 sm:py-6'
+          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100 py-2 sm:py-2.5'
+          : 'bg-transparent py-3 sm:py-4'
       )}
     >
       <Container size="xl">
@@ -38,10 +38,10 @@ export const Navbar: React.FC = () => {
           {/* Brand Logo */}
           <a
             href="#home"
-            className="focus:outline-none focus:ring-2 focus:ring-[#094792] rounded-lg"
+            className="focus:outline-none focus:ring-2 focus:ring-[#094792] rounded-lg group"
             aria-label="H2 Lanka Homepage"
           >
-            <Logo size="md" />
+            <Logo layout="horizontal" size="sm" />
           </a>
 
           {/* Desktop Navigation Links */}
