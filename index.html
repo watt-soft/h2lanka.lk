@@ -14,8 +14,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   </head>
-  <body>
-    <div id="root"></div>
+  <body style="margin: 0; padding: 0; background-color: #04142B;">
+    <div id="root">
+      <!-- Instant Static Splash Screen (Paints in <50ms on slow mobile/3G networks) -->
+      <div id="h2-initial-splash" style="position: fixed; inset: 0; z-index: 9999; background: #04142B; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #FFFFFF; text-align: center; padding: 20px; overflow: hidden; -webkit-user-select: none; user-select: none;">
+        <!-- Glowing Halo & 3D Logo Mark -->
+        <div style="position: relative; margin-bottom: 24px; display: flex; align-items: center; justify-content: center;">
+          <div style="position: absolute; width: 140px; height: 140px; border-radius: 50%; background: radial-gradient(circle, rgba(0, 180, 216, 0.35) 0%, rgba(16, 185, 129, 0.15) 60%, transparent 80%); filter: blur(20px);"></div>
+          <img src="/logo-mark.png" alt="H2 Lanka" width="88" height="88" style="position: relative; width: 88px; height: 88px; object-fit: contain; filter: drop-shadow(0 10px 20px rgba(0, 180, 216, 0.45));" />
+        </div>
+        <!-- Typography -->
+        <div style="font-size: 26px; font-weight: 800; letter-spacing: -0.5px; color: #FFFFFF; margin-bottom: 4px;">
+          H2 Lanka <span style="font-size: 19px; font-weight: 600; color: #38BDF8;">(Pvt) Ltd</span>
+        </div>
+        <div style="font-size: 13px; color: #94A3B8; letter-spacing: 0.3px; margin-bottom: 28px; max-width: 320px;">
+          Accelerating Sri Lanka’s Green Hydrogen Future
+        </div>
+        <!-- Initial Shimmering Progress Track -->
+        <div style="width: 220px; max-width: 80vw; height: 6px; background: rgba(30, 41, 59, 0.8); border-radius: 9999px; border: 1px solid rgba(51, 65, 85, 0.6); overflow: hidden; position: relative;">
+          <div style="width: 35%; height: 100%; border-radius: 9999px; background: linear-gradient(90deg, #00B4D8, #0284C7, #10B981); animation: h2SplashShimmer 1.4s infinite ease-in-out;"></div>
+        </div>
+        <style>
+          @keyframes h2SplashShimmer {
+            0% { transform: translateX(-120%); }
+            100% { transform: translateX(350%); }
+          }
+        </style>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

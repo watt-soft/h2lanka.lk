@@ -1,18 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/hero/Hero';
+import Preloader from './components/common/Preloader';
 
 export const App: React.FC = () => {
-  return (
-    <div className="relative min-h-screen bg-white text-slate-900 font-sans antialiased selection:bg-[#094792] selection:text-white overflow-x-hidden">
-      {/* Navigation Bar */}
-      <Navbar />
+  const [, setIsLoading] = useState(true);
 
-      {/* Main Hero Section */}
-      <main>
-        <Hero />
-      </main>
-    </div>
+  return (
+    <>
+      {/* Branded Green Hydrogen Loading Page (Preloader) */}
+      <Preloader onComplete={() => setIsLoading(false)} />
+
+      {/* Main Page Content with Subtle Cinematic Entrance */}
+      <motion.div
+        initial={{ opacity: 0.85, scale: 0.985 }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+          transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] },
+        }}
+        className="relative min-h-screen bg-white text-slate-900 font-sans antialiased selection:bg-[#094792] selection:text-white overflow-x-hidden"
+      >
+        {/* Navigation Bar */}
+        <Navbar />
+
+        {/* Main Hero Section */}
+        <main>
+          <Hero />
+        </main>
+      </motion.div>
+    </>
   );
 };
 
