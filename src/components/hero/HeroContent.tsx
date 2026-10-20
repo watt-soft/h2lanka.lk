@@ -1,0 +1,84 @@
+import React from 'react';
+import { motion, type Variants } from 'framer-motion';
+import Button from '../common/Button';
+
+export const HeroContent: React.FC = () => {
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 24 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: 'easeOut' },
+    },
+  };
+
+  return (
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      className="max-w-xl xl:max-w-2xl py-12 sm:py-16 lg:py-24"
+    >
+      {/* Hero Headline */}
+      <motion.h1
+        variants={itemVariants}
+        className="text-4xl sm:text-5xl lg:text-[62px] xl:text-[68px] font-extrabold tracking-tight leading-[1.08]"
+      >
+        <span className="block text-[#083870]">
+          Powering Sri Lanka’s
+        </span>
+        <span className="block text-[#48A23F] mt-1 sm:mt-2">
+          Hydrogen Future
+        </span>
+      </motion.h1>
+
+      {/* Subtitle */}
+      <motion.p
+        variants={itemVariants}
+        className="mt-6 text-base sm:text-lg lg:text-xl text-slate-600 font-normal leading-relaxed max-w-lg"
+      >
+        Accelerating the transition to a clean, secure and sustainable energy economy.
+      </motion.p>
+
+      {/* Action Buttons */}
+      <motion.div
+        variants={itemVariants}
+        className="mt-8 sm:mt-10 flex flex-wrap items-center gap-4 sm:gap-5"
+      >
+        <Button
+          variant="primary"
+          size="md"
+          href="#about-us"
+          showArrow
+          className="px-7 py-3 font-semibold"
+        >
+          Learn More
+        </Button>
+
+        <Button
+          variant="secondary"
+          size="md"
+          href="#focus"
+          showArrow
+          className="px-7 py-3 font-semibold"
+        >
+          About Us
+        </Button>
+      </motion.div>
+    </motion.div>
+  );
+};
+
+export default HeroContent;
+
