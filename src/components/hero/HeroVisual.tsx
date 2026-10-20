@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { getAssetPath } from '../../utils/assetPath';
+import HydrogenBackground from '../common/HydrogenBackground';
 
 export const HeroVisual: React.FC = () => {
   return (
@@ -28,23 +29,28 @@ export const HeroVisual: React.FC = () => {
       {/* Subtle bottom gradient to smoothly transition into the value pillars */}
       <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-white via-white/60 to-transparent" />
 
-      {/* Ambient Hydrogen Energy Particles (CSS micro-animation) */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* Live Hydrogen Particle & Molecular Motion Engine (Hero tier) */}
+      <HydrogenBackground variant="hero" interactive={true} className="z-10" />
+
+      {/* Ambient Hydrogen Energy Glow (Breathing mesh atmosphere) */}
+      <div className="absolute inset-0 pointer-events-none z-0">
         <motion.div
           animate={{
-            y: [-10, 10, -10],
-            opacity: [0.3, 0.6, 0.3],
+            y: [-12, 12, -12],
+            scale: [1, 1.08, 1],
+            opacity: [0.25, 0.5, 0.25],
           }}
-          transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full bg-cyan-200/20 blur-3xl"
+          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+          className="absolute top-1/4 right-1/4 w-80 h-80 rounded-full bg-cyan-300/20 blur-3xl"
         />
         <motion.div
           animate={{
-            y: [10, -10, 10],
-            opacity: [0.2, 0.5, 0.2],
+            y: [12, -12, 12],
+            scale: [1.05, 0.95, 1.05],
+            opacity: [0.2, 0.45, 0.2],
           }}
-          transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-          className="absolute bottom-1/4 right-1/3 w-80 h-80 rounded-full bg-emerald-200/20 blur-3xl"
+          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+          className="absolute bottom-1/4 right-1/3 w-96 h-96 rounded-full bg-emerald-300/20 blur-3xl"
         />
       </div>
     </div>
