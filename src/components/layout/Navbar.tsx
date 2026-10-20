@@ -35,10 +35,15 @@ export const Navbar: React.FC = () => {
     >
       <Container size="xl">
         <div className="flex items-center justify-between">
-          {/* Brand Logo */}
+          {/* Brand Logo: Hidden on desktop when at scroll 0, smoothly fades in when scrolled */}
           <a
             href="#home"
-            className="focus:outline-none focus:ring-2 focus:ring-[#094792] rounded-lg group"
+            className={cn(
+              'focus:outline-none focus:ring-2 focus:ring-[#094792] rounded-lg group transition-all duration-300 ease-out',
+              isScrolled
+                ? 'opacity-100 translate-x-0 pointer-events-auto'
+                : 'opacity-100 pointer-events-auto lg:opacity-0 lg:-translate-x-3 lg:pointer-events-none'
+            )}
             aria-label="H2 Lanka Homepage"
           >
             <Logo layout="horizontal" size="sm" />
