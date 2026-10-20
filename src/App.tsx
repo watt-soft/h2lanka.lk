@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/hero/Hero';
+import Footer from './components/layout/Footer';
 import Preloader from './components/common/Preloader';
 
 export const App: React.FC = () => {
@@ -29,6 +30,9 @@ export const App: React.FC = () => {
         <main className="relative pb-8 md:pb-16 lg:pb-20">
           <Hero />
         </main>
+
+        {/* Corporate Footer */}
+        <Footer />
       </motion.div>
     </>
   );

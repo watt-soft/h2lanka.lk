@@ -7,6 +7,7 @@ export interface LogoProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
   layout?: 'horizontal' | 'vertical';
   variant?: 'full' | 'mark';
+  theme?: 'light' | 'dark';
 }
 
 export const Logo: React.FC<LogoProps> = ({
@@ -14,6 +15,7 @@ export const Logo: React.FC<LogoProps> = ({
   size = 'md',
   layout = 'vertical',
   variant = 'full',
+  theme = 'light',
 }) => {
   // Horizontal layout: Mark image on left + Typography on right
   if (layout === 'horizontal') {
@@ -25,6 +27,7 @@ export const Logo: React.FC<LogoProps> = ({
     };
 
     const currentDim = markDimensions[size];
+    const isDark = theme === 'dark';
 
     return (
       <div
@@ -38,7 +41,11 @@ export const Logo: React.FC<LogoProps> = ({
           <img
             src={getAssetPath('/logo-mark.png')}
             alt="H2 Lanka Emblem"
-            className={cn('object-contain drop-shadow-sm shrink-0', currentDim.cls)}
+            className={cn(
+              'object-contain shrink-0',
+              isDark ? 'drop-shadow-[0_0_12px_rgba(56,189,248,0.35)]' : 'drop-shadow-sm',
+              currentDim.cls
+            )}
             width={currentDim.px}
             height={currentDim.px}
             loading="eager"
@@ -50,7 +57,10 @@ export const Logo: React.FC<LogoProps> = ({
         <div className="flex flex-col leading-none">
           <span
             className={cn(
-              'font-extrabold text-[#083870] tracking-tight transition-colors duration-200 group-hover:text-[#094792]',
+              'font-extrabold tracking-tight transition-colors duration-200',
+              isDark
+                ? 'text-white group-hover:text-[#38BDF8]'
+                : 'text-[#083870] group-hover:text-[#094792]',
               currentDim.titleCls
             )}
           >
@@ -58,7 +68,8 @@ export const Logo: React.FC<LogoProps> = ({
           </span>
           <span
             className={cn(
-              'font-semibold text-slate-500 tracking-wider mt-0.5 sm:mt-1',
+              'font-semibold tracking-wider mt-0.5 sm:mt-1',
+              isDark ? 'text-slate-400' : 'text-slate-500',
               currentDim.subCls
             )}
           >
