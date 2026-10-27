@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getAssetPath } from '../../utils/assetPath';
 import HydrogenBackground from './HydrogenBackground';
@@ -12,22 +12,20 @@ export const Preloader: React.FC<PreloaderProps> = ({
   onComplete,
   minDurationMs,
 }) => {
-  // Check if visitor has already experienced the intro preloader in this session
-  const alreadySeen = useMemo(() => {
+  const [progress, setProgress] = useState(0);
+  const [isFinished, setIsFinished] = useState(false);
+
+  // Clear any legacy session storage key on mount
+  useEffect(() => {
     try {
-      return typeof window !== 'undefined' && sessionStorage.getItem('h2_preloader_seen') === '1';
+      sessionStorage.removeItem('h2_preloader_seen');
     } catch {
-      return false;
+      // Ignore
     }
   }, []);
 
-  const [progress, setProgress] = useState(alreadySeen ? 100 : 0);
-  const [isFinished, setIsFinished] = useState(alreadySeen);
-
   // Preload critical assets concurrently while animating progress (deduplicated modern formats)
   useEffect(() => {
-    if (alreadySeen) return;
-
     const criticalImages = [
       getAssetPath('/hero-clean.webp'),
       getAssetPath('/logo.webp'),
@@ -38,15 +36,10 @@ export const Preloader: React.FC<PreloaderProps> = ({
       const img = new Image();
       img.src = src;
     });
-  }, [alreadySeen]);
+  }, []);
 
   // Natural progressive increment calculation with adaptive device duration
   useEffect(() => {
-    if (alreadySeen) {
-      onComplete?.();
-      return;
-    }
-
     // Adaptive duration: 750ms on mobile, 1100ms on desktop for swift loading
     const duration = minDurationMs ?? (window.innerWidth < 768 ? 750 : 1100);
     const startTime = performance.now();
@@ -67,11 +60,6 @@ export const Preloader: React.FC<PreloaderProps> = ({
         setProgress(100);
         // Snappy completion hold of 100ms before exit
         setTimeout(() => {
-          try {
-            sessionStorage.setItem('h2_preloader_seen', '1');
-          } catch {
-            // Ignore sessionStorage access limits
-          }
           setIsFinished(true);
         }, 100);
       }
@@ -82,7 +70,7 @@ export const Preloader: React.FC<PreloaderProps> = ({
     return () => {
       cancelAnimationFrame(animationFrameId);
     };
-  }, [minDurationMs, alreadySeen, onComplete]);
+  }, [minDurationMs]);
 
   // Dynamic telemetry status message
   const getStatusMessage = (p: number) => {
@@ -92,10 +80,6 @@ export const Preloader: React.FC<PreloaderProps> = ({
     if (p < 100) return 'Pressurizing Clean Storage Systems...';
     return '100% Clean Energy Ready';
   };
-
-  if (alreadySeen) {
-    return null;
-  }
 
   return (
     <AnimatePresence onExitComplete={onComplete}>

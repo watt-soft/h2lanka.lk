@@ -1,10 +1,10 @@
-import React, { useState, useEffect, Suspense, lazy } from 'react';
+import React, { useState, useEffect, useRef, Suspense, lazy } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Preloader from './components/common/Preloader';
 import RouteLoader from './components/common/RouteLoader';
-import { useHashRouter } from './hooks/useHashRouter';
+import { useHashRouter, type RouteKey } from './hooks/useHashRouter';
 import { prefetchAllRoutesIdle } from './utils/prefetchRoutes';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -15,6 +15,30 @@ const PartnersPage = lazy(() => import('./pages/PartnersPage'));
 export const App: React.FC = () => {
   const [, setIsLoading] = useState(true);
   const { currentRoute, navigate } = useHashRouter();
+  const [transitionRoute, setTransitionRoute] = useState<RouteKey | null>(null);
+  const prevRouteRef = useRef<RouteKey>(currentRoute);
+  const isInitialMountRef = useRef<boolean>(true);
+
+  // Trigger RouteLoader when user navigates between tabs inside the app
+  useEffect(() => {
+    // Skip on initial webpage boot (Preloader handles initial boot)
+    if (isInitialMountRef.current) {
+      isInitialMountRef.current = false;
+      prevRouteRef.current = currentRoute;
+      return;
+    }
+
+    if (prevRouteRef.current !== currentRoute) {
+      prevRouteRef.current = currentRoute;
+      setTransitionRoute(currentRoute);
+
+      const timer = setTimeout(() => {
+        setTransitionRoute(null);
+      }, 350);
+
+      return () => clearTimeout(timer);
+    }
+  }, [currentRoute]);
 
   // Opportunistically prefetch lazy chunks during idle browser cycles
   useEffect(() => {
@@ -22,6 +46,10 @@ export const App: React.FC = () => {
   }, []);
 
   const renderActivePage = () => {
+    if (transitionRoute !== null) {
+      return <RouteLoader key={`transition-${transitionRoute}`} currentRoute={transitionRoute} />;
+    }
+
     switch (currentRoute) {
       case 'about':
         return <AboutPage key="about" />;
