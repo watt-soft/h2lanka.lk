@@ -10,6 +10,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import Hero from '../components/hero/Hero';
+import NationalEconomyVision from '../components/home/NationalEconomyVision';
 import Container from '../components/layout/Container';
 import Button from '../components/common/Button';
 
@@ -29,8 +30,11 @@ export const HomePage: React.FC = () => {
       {/* 1. Hero Section with 3D Headline, Landscape Visual, and Value Pillars */}
       <Hero />
 
-      {/* 2. Strategic Gateway Portals to Inner Pages */}
-      <section className="relative py-12 sm:py-16" aria-label="Explore H2 Lanka">
+      {/* 2. National Green Hydrogen Economy Vision Banner (Web sample 2.jpeg) */}
+      <NationalEconomyVision />
+
+      {/* 3. Strategic Gateway Portals to Inner Pages */}
+      <section className="relative py-4 sm:py-5" aria-label="Explore H2 Lanka">
         <Container size="xl">
           <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/20 text-[#083870] text-xs font-semibold tracking-wide">

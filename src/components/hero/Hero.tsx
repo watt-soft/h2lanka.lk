@@ -10,7 +10,7 @@ export const Hero: React.FC = () => {
     <>
       <section
         id="home"
-        className="relative min-h-screen flex flex-col justify-between pt-6 sm:pt-8 lg:pt-6 pb-6 md:pb-8 lg:pb-10 bg-slate-50/50"
+        className="relative min-h-screen flex flex-col justify-between pt-6 sm:pt-8 lg:pt-6 pb-0 md:pb-0 lg:pb-0 bg-slate-50/50"
       >
         {/* Background Visual Landscape */}
         <HeroVisual />
@@ -43,7 +43,7 @@ export const Hero: React.FC = () => {
       </section>
 
       {/* Mobile Value Pillars: Positioned cleanly below the hero section without overlapping the imagery */}
-      <section id="pillars" className="md:hidden py-10 px-2 sm:px-4 bg-gradient-to-b from-white via-slate-50/80 to-white">
+      <section id="pillars" className="md:hidden py-2 px-2 sm:px-4 bg-gradient-to-b from-white via-slate-50/80 to-white">
         <ValuePillars />
       </section>
     </>
