@@ -36,3 +36,6 @@ export interface SocialLink {
   ariaLabel: string;
 }
 
+export * from './about';
+
+

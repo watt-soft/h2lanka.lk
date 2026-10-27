@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/hero/Hero';
+import About from './components/about/About';
 import Footer from './components/layout/Footer';
 import Preloader from './components/common/Preloader';
 
@@ -26,9 +27,10 @@ export const App: React.FC = () => {
         {/* Navigation Bar */}
         <Navbar />
 
-        {/* Main Hero Section */}
-        <main className="relative pb-8 md:pb-16 lg:pb-20">
+        {/* Main Content Sections */}
+        <main className="relative">
           <Hero />
+          <About />
         </main>
 
         {/* Corporate Footer */}
