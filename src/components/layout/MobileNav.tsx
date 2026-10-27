@@ -6,16 +6,38 @@ import Button from '../common/Button';
 interface MobileNavProps {
   isOpen: boolean;
   navItems: NavItem[];
+  activeSection?: string;
   onClose: () => void;
   onContactClick?: () => void;
+  onSelectSection?: (href: string) => void;
 }
 
 export const MobileNav: React.FC<MobileNavProps> = ({
   isOpen,
   navItems,
+  activeSection,
   onClose,
   onContactClick,
+  onSelectSection,
 }) => {
+  const handleItemClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    onSelectSection?.(href);
+    onClose();
+
+    const targetId = href.replace('#', '');
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      setTimeout(() => {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+        window.history.pushState(null, '', href);
+      }, 100);
+    } else {
+      window.history.pushState(null, '', href);
+    }
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -24,37 +46,56 @@ export const MobileNav: React.FC<MobileNavProps> = ({
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3, ease: 'easeOut' }}
-          className="md:hidden bg-white/95 backdrop-blur-xl border-b border-slate-100 shadow-xl overflow-hidden"
+          className="lg:hidden bg-white/95 backdrop-blur-xl border-b border-slate-100 shadow-xl overflow-hidden"
         >
           <div className="px-6 py-6 space-y-4">
             <nav className="flex flex-col space-y-2">
-              {navItems.map((item, index) => (
-                <motion.a
-                  key={item.name}
-                  href={item.href}
-                  onClick={onClose}
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05 }}
-                  className={`text-base font-semibold py-2 px-3 rounded-lg transition-colors ${
-                    item.isActive
-                      ? 'text-[#094792] bg-blue-50/70 font-bold'
+              {navItems.map((item, index) => {
+                const isActive = activeSection ? activeSection === item.href : item.isActive;
+                return (
+                  <motion.a
+                    key={item.name}
+                    href={item.href}
+                    onClick={(e) => handleItemClick(e, item.href)}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                    className={`relative flex items-center justify-between text-base font-semibold py-2.5 px-3.5 rounded-xl transition-all duration-200 ${isActive
+                      ? 'text-[#083870] bg-blue-50/90 font-bold shadow-xs'
                       : 'text-slate-700 hover:text-[#094792] hover:bg-slate-50'
-                  }`}
-                >
-                  {item.name}
-                </motion.a>
-              ))}
+                      }`}
+                  >
+                    <span>{item.name}</span>
+                    {isActive && (
+                      <motion.span
+                        layoutId="activeMobileNavIndicator"
+                        className="w-1.5 h-5 bg-[#094792] rounded-full"
+                        transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+                      />
+                    )}
+                  </motion.a>
+                );
+              })}
             </nav>
 
             <div className="pt-2">
               <Button
                 variant="primary"
                 size="md"
+                href="#contact"
                 className="w-full justify-center"
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault();
+                  onSelectSection?.('#contact');
                   onClose();
                   onContactClick?.();
+                  const contactEl = document.getElementById('contact');
+                  if (contactEl) {
+                    setTimeout(() => {
+                      contactEl.scrollIntoView({ behavior: 'smooth' });
+                      window.history.pushState(null, '', '#contact');
+                    }, 100);
+                  }
                 }}
               >
                 Get in Touch

@@ -9,16 +9,68 @@ import MobileNav from './MobileNav';
 import { cn } from '../../utils/cn';
 
 export const Navbar: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(() => {
+    return typeof window !== 'undefined' ? window.scrollY > 20 : false;
+  });
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>(() => {
+    return typeof window !== 'undefined' && window.location.hash
+      ? window.location.hash
+      : '#home';
+  });
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const scrollY = window.scrollY;
+      setIsScrolled(scrollY > 20);
+
+      // Top of page
+      if (scrollY < 120) {
+        setActiveSection('#home');
+        return;
+      }
+
+      // Bottom of page: activate last available section
+      if (window.innerHeight + scrollY >= document.documentElement.scrollHeight - 60) {
+        const lastExisting = [...navigationItems].reverse().find((item) => {
+          const id = item.href.replace('#', '');
+          return document.getElementById(id);
+        });
+        if (lastExisting) {
+          setActiveSection(lastExisting.href);
+          return;
+        }
+      }
+
+      // Check section bounding rects with navbar offset
+      const navThreshold = 140;
+      for (const item of navigationItems) {
+        const id = item.href.replace('#', '');
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= navThreshold && rect.bottom > navThreshold) {
+          setActiveSection(item.href);
+          break;
+        }
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    const rafId = requestAnimationFrame(handleScroll);
+
+    const handleHashChange = () => {
+      if (window.location.hash) {
+        setActiveSection(window.location.hash);
+      }
+    };
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('hashchange', handleHashChange);
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (
@@ -38,6 +90,7 @@ export const Navbar: React.FC = () => {
           {/* Brand Logo: Hidden on desktop when at scroll 0, smoothly fades in when scrolled */}
           <a
             href="#home"
+            onClick={() => setActiveSection('#home')}
             className={cn(
               'focus:outline-none focus:ring-2 focus:ring-[#094792] rounded-lg group transition-all duration-300 ease-out',
               isScrolled
@@ -51,27 +104,31 @@ export const Navbar: React.FC = () => {
 
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
-            {navigationItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className={cn(
-                  'relative text-sm xl:text-base font-semibold transition-colors duration-200 py-1',
-                  item.isActive
-                    ? 'text-[#083870] font-bold'
-                    : 'text-slate-700 hover:text-[#094792]'
-                )}
-              >
-                {item.name}
-                {item.isActive && (
-                  <motion.div
-                    layoutId="activeNavIndicator"
-                    className="absolute -bottom-1 left-0 right-0 h-[2.5px] bg-[#094792] rounded-full"
-                    transition={{ type: 'spring', stiffness: 350, damping: 30 }}
-                  />
-                )}
-              </a>
-            ))}
+            {navigationItems.map((item) => {
+              const isActive = activeSection === item.href;
+              return (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setActiveSection(item.href)}
+                  className={cn(
+                    'relative text-sm xl:text-base font-semibold transition-colors duration-200 py-1',
+                    isActive
+                      ? 'text-[#083870] font-bold'
+                      : 'text-slate-700 hover:text-[#094792]'
+                  )}
+                >
+                  {item.name}
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeNavIndicator"
+                      className="absolute -bottom-1 left-0 right-0 h-[2.5px] bg-[#094792] rounded-full"
+                      transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+                    />
+                  )}
+                </a>
+              );
+            })}
           </nav>
 
           {/* Desktop CTA Button */}
@@ -80,6 +137,7 @@ export const Navbar: React.FC = () => {
               variant="primary"
               size="md"
               href="#contact"
+              onClick={() => setActiveSection('#contact')}
               className="text-sm px-6 py-2.5 font-medium"
             >
               Get in Touch
@@ -104,7 +162,9 @@ export const Navbar: React.FC = () => {
       <MobileNav
         isOpen={isMobileMenuOpen}
         navItems={navigationItems}
+        activeSection={activeSection}
         onClose={() => setIsMobileMenuOpen(false)}
+        onSelectSection={(href) => setActiveSection(href)}
       />
     </motion.header>
   );

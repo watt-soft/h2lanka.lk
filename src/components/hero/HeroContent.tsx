@@ -72,17 +72,17 @@ export const HeroContent: React.FC = () => {
           showArrow
           className="px-7 py-3 font-semibold"
         >
-          Learn More
+          About Us
         </Button>
 
         <Button
           variant="secondary"
           size="md"
-          href="#focus"
+          href="#our-focus"
           showArrow
           className="px-7 py-3 font-semibold"
         >
-          About Us
+          Our Focus
         </Button>
       </motion.div>
     </motion.div>
