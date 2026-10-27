@@ -29,14 +29,15 @@ export const FocusHeader: React.FC<FocusHeaderProps> = ({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/25 text-[#083870] text-xs sm:text-sm font-semibold tracking-wide shadow-xs"
+        className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/25 text-[#083870] text-[11px] sm:text-xs md:text-sm font-semibold tracking-wide shadow-xs max-w-full"
       >
-        <span className="relative flex h-2 w-2">
+        <span className="relative flex h-2 w-2 shrink-0">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
           <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500" />
         </span>
-        <Target className="w-3.5 h-3.5 text-[#00B4D8]" />
-        <span>OUR STRATEGIC FOCUS • CLEAN ENERGY SOLUTIONS</span>
+        <Target className="w-3.5 h-3.5 text-[#00B4D8] shrink-0" />
+        <span className="sm:hidden whitespace-nowrap">OUR STRATEGIC FOCUS</span>
+        <span className="hidden sm:inline whitespace-nowrap">OUR STRATEGIC FOCUS • CLEAN ENERGY SOLUTIONS</span>
       </motion.div>
 
       {/* Main Headline */}

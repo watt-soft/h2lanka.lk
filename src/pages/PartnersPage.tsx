@@ -76,7 +76,7 @@ export const PartnersPage: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -15 }}
       transition={{ duration: 0.35, ease: 'easeOut' }}
-      className="pt-16 sm:pt-20 lg:pt-24"
+    // className="pt-16 sm:pt-20 lg:pt-24"
     >
       <section
         id="partners"
@@ -100,9 +100,10 @@ export const PartnersPage: React.FC = () => {
         <Container size="xl" className="relative z-10 space-y-20 sm:space-y-24 lg:space-y-32">
           {/* Header */}
           <div className="relative max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/25 text-[#083870] text-xs sm:text-sm font-semibold tracking-wide shadow-xs">
-              <Globe className="w-3.5 h-3.5 text-[#00B4D8]" />
-              <span>GLOBAL & KOREAN COLLABORATION</span>
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/25 text-[#083870] text-[11px] sm:text-xs md:text-sm font-semibold tracking-wide shadow-xs max-w-full">
+              <Globe className="w-3.5 h-3.5 text-[#00B4D8] shrink-0" />
+              <span className="sm:hidden whitespace-nowrap">GLOBAL ALLIANCES</span>
+              <span className="hidden sm:inline whitespace-nowrap">GLOBAL & KOREAN COLLABORATION</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-extrabold text-[#062A56] tracking-tight leading-[1.12]">

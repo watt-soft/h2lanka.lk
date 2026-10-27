@@ -13,7 +13,7 @@ export const OurFocusPage: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -15 }}
       transition={{ duration: 0.35, ease: 'easeOut' }}
-      className="pt-16 sm:pt-20 lg:pt-24"
+    // className="pt-16 sm:pt-20 lg:pt-24"
     >
       <OurFocus />
     </motion.div>

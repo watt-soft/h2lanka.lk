@@ -19,13 +19,14 @@ export const AboutHeader: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[#083870] text-xs sm:text-sm font-semibold tracking-wide shadow-xs"
+        className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[#083870] text-[11px] sm:text-xs md:text-sm font-semibold tracking-wide shadow-xs max-w-full"
       >
-        <span className="relative flex h-2 w-2">
+        <span className="relative flex h-2 w-2 shrink-0">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
           <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
         </span>
-        <span>ABOUT H2 LANKA • CATALYZING CLEAN ENERGY</span>
+        <span className="sm:hidden whitespace-nowrap">ABOUT H2 LANKA</span>
+        <span className="hidden sm:inline whitespace-nowrap">ABOUT H2 LANKA • CATALYZING CLEAN ENERGY</span>
       </motion.div>
 
       {/* Main Section Headline */}
