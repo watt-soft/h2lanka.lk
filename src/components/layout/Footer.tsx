@@ -52,22 +52,25 @@ export const Footer: React.FC = () => {
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center gap-4 shrink-0">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full lg:w-auto shrink-0 pt-2 lg:pt-0">
               <Button
-                variant="primary"
+                variant="gradient"
                 size="md"
                 href="#/contact"
-                className="px-6 py-3 font-semibold shadow-lg shadow-cyan-500/20"
+                fullWidth="mobile"
+                showArrow
               >
                 Get in Touch
               </Button>
-              <a
+              <Button
+                variant="dark"
+                size="md"
                 href="mailto:info@h2lanka.lk"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 text-slate-200 hover:text-white text-sm font-semibold transition-all duration-200"
+                fullWidth="mobile"
+                icon={<Mail className="w-4 h-4 text-cyan-400" />}
               >
-                <Mail className="w-4 h-4 text-cyan-400" />
-                <span>info@h2lanka.lk</span>
-              </a>
+                info@h2lanka.lk
+              </Button>
             </div>
           </div>
         </div>

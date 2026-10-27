@@ -63,14 +63,14 @@ export const HeroContent: React.FC = () => {
       {/* Action Buttons */}
       <motion.div
         variants={itemVariants}
-        className="mt-8 sm:mt-10 flex flex-wrap items-center gap-4 sm:gap-5"
+        className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-5 w-full sm:w-auto"
       >
         <Button
           variant="primary"
           size="md"
           href="#/about"
           showArrow
-          className="px-7 py-3 font-semibold"
+          fullWidth="mobile"
         >
           About Us
         </Button>
@@ -80,7 +80,7 @@ export const HeroContent: React.FC = () => {
           size="md"
           href="#/our-focus"
           showArrow
-          className="px-7 py-3 font-semibold"
+          fullWidth="mobile"
         >
           Our Focus
         </Button>

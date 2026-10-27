@@ -63,14 +63,14 @@ export const ValueChainGrid: React.FC = () => {
       </div>
 
       {/* Interactive Category Filter Tabs */}
-      <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+      <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2.5">
         {filterTabs.map((tab) => (
           <button
             key={tab.id}
             type="button"
             onClick={() => setSelectedCategory(tab.id)}
             className={cn(
-              'relative px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-[#094792]',
+              'relative px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 sm:gap-2 focus:outline-none focus:ring-2 focus:ring-[#094792] cursor-pointer whitespace-nowrap active:scale-95',
               selectedCategory === tab.id
                 ? 'bg-[#062A56] text-white shadow-md shadow-slate-900/10'
                 : 'bg-white text-slate-600 hover:text-[#062A56] hover:bg-slate-100/80 border border-slate-200/80'
@@ -79,7 +79,7 @@ export const ValueChainGrid: React.FC = () => {
             <span>{tab.label}</span>
             <span
               className={cn(
-                'px-1.5 py-0.2 rounded-full text-[11px] font-bold',
+                'px-1.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold',
                 selectedCategory === tab.id
                   ? 'bg-emerald-400 text-slate-950'
                   : 'bg-slate-100 text-slate-500'

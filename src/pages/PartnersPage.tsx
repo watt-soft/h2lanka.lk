@@ -8,7 +8,6 @@ import {
   Building2,
   CheckCircle2,
   Mail,
-  ArrowRight,
 } from 'lucide-react';
 import Container from '../components/layout/Container';
 import Button from '../components/common/Button';
@@ -179,24 +178,27 @@ export const PartnersPage: React.FC = () => {
                 </p>
               </div>
 
-              <div className="flex flex-wrap items-center gap-4 shrink-0">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full lg:w-auto shrink-0 pt-2 lg:pt-0">
                 <Button
-                  variant="primary"
+                  variant="gradient"
                   size="md"
                   href="#/contact"
-                  className="px-6 py-3 font-semibold shadow-lg shadow-cyan-500/20 bg-gradient-to-r from-[#094792] to-[#00B4D8] hover:from-[#083870] hover:to-[#38BDF8] text-white border-0"
+                  fullWidth="mobile"
+                  icon={<Mail className="w-4 h-4" />}
+                  mobileText="Contact Alliances"
                 >
-                  <Mail className="w-4 h-4 mr-2" />
-                  <span>Contact Our Alliances Team</span>
+                  Contact Our Alliances Team
                 </Button>
 
-                <a
+                <Button
+                  variant="glass"
+                  size="md"
                   href="#/our-focus"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white text-sm font-semibold transition-all duration-200 group"
+                  fullWidth="mobile"
+                  showArrow
                 >
-                  <span>Explore Capabilities</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-                </a>
+                  Explore Capabilities
+                </Button>
               </div>
             </div>
           </motion.div>

@@ -100,10 +100,9 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="hidden lg:flex items-center">
             <Button
               variant="primary"
-              size="md"
+              size="sm"
               href="#/contact"
               onClick={() => onNavigate?.('#/contact')}
-              className="text-sm px-6 py-2.5 font-medium"
             >
               Get in Touch
             </Button>

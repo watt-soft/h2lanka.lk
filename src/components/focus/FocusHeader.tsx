@@ -72,7 +72,7 @@ export const FocusHeader: React.FC<FocusHeaderProps> = ({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="pt-2 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5"
+        className="pt-2 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2.5"
       >
         {clusterTabs.map((tab) => {
           const isSelected = selectedCluster === tab.id;
@@ -82,7 +82,7 @@ export const FocusHeader: React.FC<FocusHeaderProps> = ({
               type="button"
               onClick={() => onSelectCluster(tab.id)}
               className={cn(
-                'relative px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-[#094792] cursor-pointer',
+                'relative px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 sm:gap-2 focus:outline-none focus:ring-2 focus:ring-[#094792] cursor-pointer whitespace-nowrap active:scale-95',
                 isSelected
                   ? 'bg-[#062A56] text-white shadow-md shadow-slate-900/15'
                   : 'bg-white text-slate-600 hover:text-[#062A56] hover:bg-slate-100/80 border border-slate-200/90'
@@ -91,7 +91,7 @@ export const FocusHeader: React.FC<FocusHeaderProps> = ({
               <span>{tab.label}</span>
               <span
                 className={cn(
-                  'px-1.5 py-0.2 rounded-full text-[11px] font-bold',
+                  'px-1.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold',
                   isSelected
                     ? 'bg-cyan-400 text-slate-950'
                     : 'bg-slate-100 text-slate-500'

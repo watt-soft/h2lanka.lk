@@ -70,10 +70,11 @@ export const MobileNav: React.FC<MobileNavProps> = ({
 
             <div className="pt-2">
               <Button
-                variant="primary"
+                variant="gradient"
                 size="md"
                 href="#/contact"
-                className="w-full justify-center"
+                fullWidth
+                showArrow
                 onClick={() => {
                   onSelectSection?.('#/contact');
                   onClose();
