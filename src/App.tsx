@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/hero/Hero';
 import About from './components/about/About';
+import OurFocus from './components/focus/OurFocus';
 import Footer from './components/layout/Footer';
 import Preloader from './components/common/Preloader';
 
@@ -31,6 +32,7 @@ export const App: React.FC = () => {
         <main className="relative">
           <Hero />
           <About />
+          <OurFocus />
         </main>
 
         {/* Corporate Footer */}
