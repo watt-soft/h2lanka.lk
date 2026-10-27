@@ -39,5 +39,6 @@ export interface SocialLink {
 
 export * from './about';
 export * from './focus';
+export * from './leadership';
 
 
