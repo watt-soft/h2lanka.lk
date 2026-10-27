@@ -57,7 +57,7 @@ export const HeroContent: React.FC = () => {
         variants={itemVariants}
         className="mt-6 text-base sm:text-lg lg:text-xl text-slate-800 font-medium leading-relaxed max-w-lg"
       >
-        Accelerating the transition to a clean, secure and sustainable energy economy.
+        Accelerating the transition to a clean, secure and sustainable energy economy
       </motion.p>
 
       {/* Action Buttons */}
