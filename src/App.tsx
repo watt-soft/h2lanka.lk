@@ -76,13 +76,13 @@ export const App: React.FC = () => {
           scale: 1,
           transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] },
         }}
-        className="relative min-h-screen bg-white text-slate-900 font-sans antialiased selection:bg-[#094792] selection:text-white flex flex-col justify-between"
+        className="relative min-h-screen w-full max-w-full overflow-x-clip bg-white text-slate-900 font-sans antialiased selection:bg-[#094792] selection:text-white flex flex-col justify-between"
       >
         {/* Navigation Bar */}
         <Navbar currentRoute={currentRoute} onNavigate={navigate} />
 
         {/* Dynamic Multi-Page Content with Suspense and AnimatePresence */}
-        <main className="relative flex-grow">
+        <main className="relative flex-grow w-full max-w-full overflow-x-clip">
           <Suspense fallback={<RouteLoader currentRoute={currentRoute} />}>
             <AnimatePresence mode="wait">
               {renderActivePage()}

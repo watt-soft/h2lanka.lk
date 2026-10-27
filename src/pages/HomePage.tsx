@@ -17,7 +17,7 @@ export const HomePage: React.FC = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="space-y-16 sm:space-y-24"
+      className="w-full max-w-full overflow-x-clip space-y-16 sm:space-y-24"
     >
       {/* 1. Hero Section with 3D Headline, Landscape Visual, and Value Pillars */}
       <Hero />

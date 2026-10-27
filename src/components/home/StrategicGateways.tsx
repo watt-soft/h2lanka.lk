@@ -66,7 +66,7 @@ const gatewayCards: GatewayCardData[] = [
 
 export const StrategicGateways: React.FC = () => {
   return (
-    <section className="relative py-4 sm:py-6" aria-label="Explore H2 Lanka Platforms">
+    <section className="relative py-4 sm:py-6 overflow-hidden" aria-label="Explore H2 Lanka Platforms">
       <Container size="xl">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14 space-y-3">

@@ -42,7 +42,7 @@ export const HeroContent: React.FC = () => {
       {/* Hero Headline */}
       <motion.h1
         variants={itemVariants}
-        className="text-4xl sm:text-5xl lg:text-[62px] xl:text-[68px] font-extrabold tracking-tight leading-[1.08]"
+        className="text-[32px] sm:text-5xl lg:text-[62px] xl:text-[68px] font-extrabold tracking-tight leading-[1.1] sm:leading-[1.08]"
       >
         <span className="block text-[#062A56]">
           Powering Sri Lanka’s

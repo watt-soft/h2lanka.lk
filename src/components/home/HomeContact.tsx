@@ -44,7 +44,7 @@ export const HomeContact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="relative py-14 sm:py-20 lg:py-24 bg-gradient-to-b from-slate-50/80 via-white to-sky-50/30 border-t border-slate-200/80 scroll-mt-24 sm:scroll-mt-28"
+      className="relative py-14 sm:py-20 lg:py-24 bg-gradient-to-b from-slate-50/80 via-white to-sky-50/30 border-t border-slate-200/80 scroll-mt-24 sm:scroll-mt-28 overflow-hidden"
       aria-label="Contact H2 Lanka"
     >
       {/* Ambient background soft glow */}
