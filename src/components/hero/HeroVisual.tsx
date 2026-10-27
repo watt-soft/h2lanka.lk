@@ -21,7 +21,7 @@ export const HeroVisual: React.FC = () => {
 
       {/* Atmospheric & Contrast Gradient Overlay */}
       {/* Soft fade on the left to ensure maximum text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/98 via-white/20 to-transparent sm:via-white/20 md:via-white/10 lg:w-3/5" />
+      <div className="absolute inset-0 bg-gradient-to-r from-white/98 via-white/60 to-transparent sm:via-white/60 md:via-white/10 lg:w-3/5" />
 
       {/* Soft ambient light bloom directly behind text area for maximum contrast */}
       <div className="absolute top-1/4 left-0 w-[550px] h-[450px] bg-white/60 blur-3xl pointer-events-none rounded-full" />
