@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Users, Award, ChevronRight, GraduationCap } from 'lucide-react';
+import { Users, Award, GraduationCap } from 'lucide-react';
 import Container from '../layout/Container';
 import Button from '../common/Button';
 import LeaderBioModal from './LeaderBioModal';
 import { leadershipProfiles } from '../../data/leadership';
 import type { LeaderProfile, LeadershipCategory } from '../../types/leadership';
 import { getAssetPath } from '../../utils/assetPath';
+import { cn } from '../../utils/cn';
 
 export const LeadershipSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<LeadershipCategory>('all');
@@ -57,30 +58,31 @@ export const LeadershipSection: React.FC = () => {
             Guided by seasoned leaders in clean energy policy, corporate banking, international development, and advanced green hydrogen engineering.
           </p>
 
-          {/* Filter Pills */}
-          <div className="pt-2 flex items-center justify-center gap-2 flex-wrap">
+          {/* Unified Category Filter Tabs using Button component */}
+          <div className="pt-3 flex items-center justify-center gap-2 sm:gap-2.5 flex-wrap">
             {categories.map((cat) => {
               const isActive = activeCategory === cat.key;
               return (
-                <button
+                <Button
                   key={cat.key}
-                  type="button"
+                  variant={isActive ? 'primary' : 'secondary'}
+                  size="xs"
                   onClick={() => setActiveCategory(cat.key)}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer ${
-                    isActive
-                      ? 'bg-[#094792] text-white shadow-sm'
-                      : 'bg-white text-slate-600 hover:text-slate-900 border border-slate-200 hover:bg-slate-50'
-                  }`}
+                  className={cn(
+                    'transition-all duration-200 cursor-pointer shadow-xs',
+                    !isActive && 'text-slate-600 hover:text-slate-900 border-slate-200 bg-white/90 hover:bg-slate-50'
+                  )}
                 >
                   <span>{cat.label}</span>
                   <span
-                    className={`ml-1.5 text-[11px] px-1.5 py-0.2 rounded-full ${
-                      isActive ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-500'
-                    }`}
+                    className={cn(
+                      'ml-1.5 text-[10px] px-1.5 py-0.5 rounded-full font-bold transition-colors',
+                      isActive ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-600'
+                    )}
                   >
                     {cat.count}
                   </span>
-                </button>
+                </Button>
               );
             })}
           </div>
@@ -104,7 +106,17 @@ export const LeadershipSection: React.FC = () => {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.4, delay: index * 0.08 }}
                   whileHover={{ y: -6 }}
-                  className="group relative rounded-3xl bg-white border border-slate-200/90 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden"
+                  onClick={() => setSelectedLeader(leader)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setSelectedLeader(leader);
+                    }
+                  }}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`View full executive profile of ${leader.name}`}
+                  className="group relative rounded-3xl bg-white border border-slate-200/90 hover:border-[#094792]/40 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#094792]"
                 >
                   {/* Top Image Frame */}
                   <div>
@@ -114,24 +126,33 @@ export const LeadershipSection: React.FC = () => {
                         <img
                           src={getAssetPath(leader.image.jpg)}
                           alt={leader.image.alt}
-                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                          className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105"
                           width={640}
                           height={800}
                           loading="lazy"
                         />
                       </picture>
 
+                      {/* Top Right Category Glass Tag */}
+                      <div className="absolute top-3 right-3 z-10">
+                        <span className="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-slate-950/70 text-slate-200 backdrop-blur-md border border-white/10 shadow-xs flex items-center gap-1">
+                          <Award className="w-3 h-3 text-[#00B4D8]" />
+                          <span>{leader.categoryLabel}</span>
+                        </span>
+                      </div>
+
                       {/* Gradient Vignette at Bottom of Image */}
-                      <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-slate-950/60 to-transparent pointer-events-none" />
+                      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent pointer-events-none" />
 
                       {/* Role Floating Badge */}
-                      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2">
+                      <div className="absolute bottom-3 left-3 right-3 z-10 flex items-center justify-between gap-2">
                         <span
-                          className={`text-[11px] font-bold px-2.5 py-1 rounded-lg backdrop-blur-md shadow-xs truncate ${
+                          className={cn(
+                            'text-xs font-bold px-3 py-1.5 rounded-xl backdrop-blur-md shadow-md border truncate',
                             isAdvisory
-                              ? 'bg-emerald-950/80 text-emerald-300 border border-emerald-400/30'
-                              : 'bg-slate-950/80 text-cyan-300 border border-cyan-400/30'
-                          }`}
+                              ? 'bg-slate-950/85 text-emerald-300 border-emerald-400/40'
+                              : 'bg-slate-950/85 text-cyan-300 border-cyan-400/40'
+                          )}
                         >
                           {leader.role}
                         </span>
@@ -149,14 +170,14 @@ export const LeadershipSection: React.FC = () => {
                         </p>
                       </div>
 
-                      {/* Credential Tags */}
-                      <div className="flex flex-wrap gap-1">
+                      {/* Credential Tags with Icons */}
+                      <div className="flex flex-wrap gap-1.5 pt-0.5">
                         {leader.credentials.slice(0, 2).map((cred) => (
                           <span
                             key={cred}
-                            className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 border border-slate-200"
+                            className="inline-flex items-center gap-1 text-[11px] font-medium px-2.5 py-0.5 rounded-lg bg-slate-100 text-slate-700 border border-slate-200"
                           >
-                            <GraduationCap className="w-3 h-3 text-[#094792] shrink-0" />
+                            <GraduationCap className="w-3.5 h-3.5 text-[#094792] shrink-0" />
                             <span className="truncate">{cred}</span>
                           </span>
                         ))}
@@ -169,22 +190,21 @@ export const LeadershipSection: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Card Action Footer */}
-                  <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-2 border-t border-slate-100/90 flex items-center justify-between">
+                  {/* Card Action Footer with Common Button Component */}
+                  <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 border-t border-slate-100">
                     <Button
-                      variant="ghost"
-                      size="xs"
-                      onClick={() => setSelectedLeader(leader)}
-                      className="text-[#094792] hover:text-[#083870] -ml-2 font-bold flex items-center gap-1"
+                      variant="secondary"
+                      size="sm"
+                      fullWidth="mobile"
+                      showArrow
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedLeader(leader);
+                      }}
+                      className="w-full text-xs font-bold text-[#083870] group-hover:bg-[#094792] group-hover:text-white group-hover:border-[#094792] transition-colors"
                     >
-                      <span>View Full Profile</span>
-                      <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                      View Full Profile
                     </Button>
-
-                    <span className="text-[10px] text-slate-400 font-mono flex items-center gap-1">
-                      <Award className="w-3 h-3 text-cyan-500" />
-                      <span>{leader.category === 'board' ? 'Director' : 'Adviser'}</span>
-                    </span>
                   </div>
                 </motion.div>
               );
@@ -203,4 +223,3 @@ export const LeadershipSection: React.FC = () => {
 };
 
 export default LeadershipSection;
-

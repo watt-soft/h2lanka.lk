@@ -2,6 +2,33 @@ import type { LeaderProfile } from '../types/leadership';
 
 export const leadershipProfiles: LeaderProfile[] = [
   {
+    id: 'dr-dayan-karunarathna',
+    name: 'Dr. Dayan Karunarathna',
+    role: 'Technical Adviser',
+    category: 'advisory',
+    categoryLabel: 'Technical Advisory',
+    experience: '17+ Years Renewable Energy',
+    credentials: ['PhD (Korea University)', 'Green Hydrogen Specialist', 'HOMER Pro & LEAP'],
+    domain: 'Techno-Economic Analysis & Renewable Hydrogen Strategy',
+    bioExcerpt:
+      'Renewable energy specialist with 17+ years in resource assessment and clean energy planning. His Korea University doctoral research provides the techno-economic blueprint for green hydrogen in Sri Lanka.',
+    fullBio: [
+      'Dr. Dayan Karunarathna is a renewable energy specialist with over 17 years of professional experience in resource assessment, clean energy planning, and sustainable energy policy development in Sri Lanka, where he contributes to national renewable energy initiatives, including resource mapping, energy forecasting, and the development of Sri Lanka’s renewable hydrogen strategy.',
+      'He earned his Doctor of Philosophy (PhD) in Energy and Environment from Korea University, Republic of Korea. His doctoral research focused on the techno-economic analysis of green hydrogen production and its application in Sri Lanka’s transportation sector, utilizing advanced energy modeling tools such as HOMER Pro, LEAP, and the HySupply Cost Tool. His research provides practical pathways for integrating renewable hydrogen into Sri Lanka’s future low-carbon economy.',
+    ],
+    image: {
+      webp: '/leadership/dr-dayan-karunarathna.webp',
+      jpg: '/leadership/dr-dayan-karunarathna.jpg',
+      alt: 'Dr. Dayan Karunarathna, Technical Adviser at H2 Lanka',
+    },
+    keyPillars: [
+      'Techno-Economic Modeling',
+      'Korea Univ Hydrogen PhD',
+      'Resource Mapping',
+      'National H2 Strategy',
+    ],
+  },
+  {
     id: 'nihal-dedigama',
     name: 'Mr. Nihal Dedigama',
     role: 'Director / Chief Executive Officer',
@@ -55,33 +82,6 @@ export const leadershipProfiles: LeaderProfile[] = [
       'Credit Risk Structuring',
       'Investment Evaluation',
       'Corporate Governance',
-    ],
-  },
-  {
-    id: 'dr-dayan-karunarathna',
-    name: 'Dr. Dayan Karunarathna',
-    role: 'Technical Adviser',
-    category: 'advisory',
-    categoryLabel: 'Technical Advisory',
-    experience: '17+ Years Renewable Energy',
-    credentials: ['PhD (Korea University)', 'Green Hydrogen Specialist', 'HOMER Pro & LEAP'],
-    domain: 'Techno-Economic Analysis & Renewable Hydrogen Strategy',
-    bioExcerpt:
-      'Renewable energy specialist with 17+ years in resource assessment and clean energy planning. His Korea University doctoral research provides the techno-economic blueprint for green hydrogen in Sri Lanka.',
-    fullBio: [
-      'Dr. Dayan Karunarathna is a renewable energy specialist with over 17 years of professional experience in resource assessment, clean energy planning, and sustainable energy policy development in Sri Lanka, where he contributes to national renewable energy initiatives, including resource mapping, energy forecasting, and the development of Sri Lanka’s renewable hydrogen strategy.',
-      'He earned his Doctor of Philosophy (PhD) in Energy and Environment from Korea University, Republic of Korea. His doctoral research focused on the techno-economic analysis of green hydrogen production and its application in Sri Lanka’s transportation sector, utilizing advanced energy modeling tools such as HOMER Pro, LEAP, and the HySupply Cost Tool. His research provides practical pathways for integrating renewable hydrogen into Sri Lanka’s future low-carbon economy.',
-    ],
-    image: {
-      webp: '/leadership/dr-dayan-karunarathna.webp',
-      jpg: '/leadership/dr-dayan-karunarathna.jpg',
-      alt: 'Dr. Dayan Karunarathna, Technical Adviser at H2 Lanka',
-    },
-    keyPillars: [
-      'Techno-Economic Modeling',
-      'Korea Univ Hydrogen PhD',
-      'Resource Mapping',
-      'National H2 Strategy',
     ],
   },
   {
