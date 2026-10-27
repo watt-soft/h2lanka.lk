@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="relative bg-[#030F22] text-white overflow-hidden border-t border-slate-800/80 pt-16 sm:pt-20 pb-12 select-none">
+    <footer className="relative bg-[#030F22] text-white overflow-hidden border-t border-slate-800/80 pt-16 sm:pt-20 pb-12 select-none">
       {/* Subtle Hydrogen Micro-Particle Atmosphere */}
       <div className="absolute inset-0 pointer-events-none opacity-80">
         <HydrogenBackground variant="minimal" speedMultiplier={0.7} particleDensity={18} />
