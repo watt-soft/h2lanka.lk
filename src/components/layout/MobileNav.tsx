@@ -2,6 +2,7 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { NavItem } from '../../types';
 import Button from '../common/Button';
+import { prefetchRoute } from '../../utils/prefetchRoutes';
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -44,14 +45,15 @@ export const MobileNav: React.FC<MobileNavProps> = ({
                     key={item.name}
                     href={item.href}
                     onClick={() => handleItemClick(item.href)}
+                    onTouchStart={() => prefetchRoute(item.href)}
+                    onMouseEnter={() => prefetchRoute(item.href)}
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.05 }}
-                    className={`relative flex items-center justify-between text-base font-semibold py-2.5 px-3.5 rounded-xl transition-all duration-200 ${
-                      isActive
+                    className={`relative flex items-center justify-between text-base font-semibold py-2.5 px-3.5 rounded-xl transition-all duration-200 ${isActive
                         ? 'text-[#083870] bg-blue-50/90 font-bold shadow-xs'
                         : 'text-slate-700 hover:text-[#094792] hover:bg-slate-50'
-                    }`}
+                      }`}
                   >
                     <span>{item.name}</span>
                     {isActive && (

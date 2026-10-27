@@ -1,9 +1,11 @@
-import React, { useState, Suspense, lazy } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Preloader from './components/common/Preloader';
+import RouteLoader from './components/common/RouteLoader';
 import { useHashRouter } from './hooks/useHashRouter';
+import { prefetchAllRoutesIdle } from './utils/prefetchRoutes';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
@@ -13,6 +15,11 @@ const PartnersPage = lazy(() => import('./pages/PartnersPage'));
 export const App: React.FC = () => {
   const [, setIsLoading] = useState(true);
   const { currentRoute, navigate } = useHashRouter();
+
+  // Opportunistically prefetch lazy chunks during idle browser cycles
+  useEffect(() => {
+    prefetchAllRoutesIdle();
+  }, []);
 
   const renderActivePage = () => {
     switch (currentRoute) {
@@ -48,13 +55,7 @@ export const App: React.FC = () => {
 
         {/* Dynamic Multi-Page Content with Suspense and AnimatePresence */}
         <main className="relative flex-grow">
-          <Suspense
-            fallback={
-              <div className="min-h-[60vh] flex items-center justify-center">
-                <div className="w-8 h-8 rounded-full border-2 border-cyan-500 border-t-transparent animate-spin" />
-              </div>
-            }
-          >
+          <Suspense fallback={<RouteLoader currentRoute={currentRoute} />}>
             <AnimatePresence mode="wait">
               {renderActivePage()}
             </AnimatePresence>

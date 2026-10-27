@@ -7,6 +7,7 @@ import Button from '../common/Button';
 import Container from './Container';
 import MobileNav from './MobileNav';
 import { cn } from '../../utils/cn';
+import { prefetchRoute } from '../../utils/prefetchRoutes';
 import type { RouteKey } from '../../hooks/useHashRouter';
 
 export interface NavbarProps {
@@ -74,6 +75,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   key={item.name}
                   href={item.href}
                   onClick={() => onNavigate?.(item.href)}
+                  onMouseEnter={() => prefetchRoute(item.href)}
                   className={cn(
                     'relative text-sm xl:text-base font-semibold transition-colors duration-200 py-1',
                     isActive
