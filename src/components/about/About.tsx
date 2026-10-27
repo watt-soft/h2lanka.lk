@@ -16,19 +16,19 @@ export const About: React.FC = () => {
       className="relative py-20 sm:py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-white via-slate-50/70 to-white border-t border-slate-100"
       aria-label="About H2 Lanka"
     >
-      {/* Subtle Hydrogen Micro-Particle Atmosphere */}
-      <div className="absolute inset-0 pointer-events-none opacity-30">
+      {/* Subtle Hydrogen Micro-Particle Atmosphere (Viewport-pinned for 60 FPS performance) */}
+      <div className="sticky top-0 h-screen w-full pointer-events-none overflow-hidden -mb-[100vh] z-0">
         <HydrogenBackground
           variant="minimal"
           interactive={false}
-          speedMultiplier={0.35}
-          particleDensity={16}
+          speedMultiplier={0.75}
+          particleDensity={22}
         />
       </div>
 
       {/* Atmospheric Soft Gradient Glows */}
-      <div className="absolute top-1/4 -left-48 w-96 h-96 rounded-full bg-emerald-500/5 blur-[120px] pointer-events-none" />
-      <div className="absolute top-2/3 -right-48 w-[450px] h-[450px] rounded-full bg-cyan-500/5 blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/4 -left-12 w-96 h-96 rounded-full bg-emerald-500/12 blur-3xl pointer-events-none" />
+      <div className="absolute top-2/3 -right-12 w-[450px] h-[450px] rounded-full bg-cyan-500/15 blur-3xl pointer-events-none" />
 
       <Container size="xl" className="relative z-10 space-y-20 sm:space-y-24 lg:space-y-32">
         {/* 1. Header & Overview Metrics */}

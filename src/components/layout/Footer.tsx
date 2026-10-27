@@ -23,13 +23,13 @@ export const Footer: React.FC = () => {
   return (
     <footer id="contact" className="relative bg-[#030F22] text-white overflow-hidden border-t border-slate-800/80 pt-16 sm:pt-20 pb-12 select-none">
       {/* Subtle Hydrogen Micro-Particle Atmosphere */}
-      <div className="absolute inset-0 pointer-events-none opacity-40">
-        <HydrogenBackground variant="minimal" speedMultiplier={0.3} particleDensity={14} />
+      <div className="absolute inset-0 pointer-events-none opacity-80">
+        <HydrogenBackground variant="minimal" speedMultiplier={0.7} particleDensity={18} />
       </div>
 
       {/* Atmospheric Cyan and Emerald Radial Glow Blobs */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-cyan-500/10 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[450px] h-[450px] rounded-full bg-emerald-500/10 blur-[140px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-cyan-500/15 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-[450px] h-[450px] rounded-full bg-emerald-500/15 blur-3xl pointer-events-none" />
 
       <Container size="xl" className="relative z-10">
         {/* ================================================================= */}

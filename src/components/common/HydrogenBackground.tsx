@@ -60,11 +60,11 @@ export const HydrogenBackground: React.FC<HydrogenBackgroundProps> = ({
         return Math.min(Math.max(Math.floor(area / 22000), 24), 70);
       }
       if (isMinimal) {
-        // approx 12-20 on desktop, 8-12 on mobile
-        return Math.min(Math.max(Math.floor(area / 65000), 8), 22);
+        // approx 18-28 on desktop, 12-18 on mobile
+        return Math.min(Math.max(Math.floor(area / 45000), 12), 28);
       }
       // subtle
-      return Math.min(Math.max(Math.floor(area / 38000), 16), 40);
+      return Math.min(Math.max(Math.floor(area / 32000), 18), 42);
     };
 
     // Color palette: Cyan, Sky Blue, and Renewable Emerald
@@ -85,8 +85,9 @@ export const HydrogenBackground: React.FC<HydrogenBackgroundProps> = ({
       if (!parent) return;
 
       const rect = parent.getBoundingClientRect();
-      width = rect.width;
-      height = rect.height;
+      width = rect.width || window.innerWidth;
+      // Safety clamp: prevent canvas from exceeding mobile GPU texture limits (4096px)
+      height = Math.min(rect.height || window.innerHeight, 2048);
       dpr = Math.min(window.devicePixelRatio || 1, 2);
 
       canvas.width = width * dpr;
@@ -108,21 +109,21 @@ export const HydrogenBackground: React.FC<HydrogenBackgroundProps> = ({
         const x = Math.random() * width;
         const y = Math.random() * height;
         const radius = isMinimal
-          ? Math.random() * 2 + 1.2
+          ? Math.random() * 2 + 1.4
           : Math.random() * 3 + 1.5;
 
         // Upward buoyancy speed (always rising)
-        const baseSpeed = (isMinimal ? 0.25 : 0.45) * speedMultiplier;
+        const baseSpeed = (isMinimal ? 0.35 : 0.5) * speedMultiplier;
         const speedY = (Math.random() * 0.4 + baseSpeed) * -1;
 
         const wobbleRadius = Math.random() * 15 + 5;
         const wobbleSpeed = Math.random() * 0.02 + 0.01;
         const colorRgb = colorPalette[Math.floor(Math.random() * colorPalette.length)];
 
-        // Base opacity: Minimal is very faint (0.07 - 0.15), Hero is vibrant (0.25 - 0.65)
+        // Base opacity: Minimal is clear and visible (0.22 - 0.45), Hero is vibrant (0.35 - 0.70)
         const baseAlpha = isMinimal
-          ? Math.random() * 0.12 + 0.05
-          : Math.random() * 0.45 + 0.2;
+          ? Math.random() * 0.23 + 0.22
+          : Math.random() * 0.35 + 0.35;
 
         particles.push({
           baseX: x,
@@ -250,12 +251,10 @@ export const HydrogenBackground: React.FC<HydrogenBackgroundProps> = ({
         ctx.fill();
 
         // Draw soft ambient glow aura around the bubble
-        if (!isMinimal) {
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.radius * 2.6, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(${p.colorRgb}, ${p.baseAlpha * 0.18})`;
-          ctx.fill();
-        }
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius * (isMinimal ? 2.0 : 2.6), 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${p.colorRgb}, ${p.baseAlpha * (isMinimal ? 0.20 : 0.25)})`;
+        ctx.fill();
       }
 
       // 2. Draw molecular bond connection lines (H-H bonds)
@@ -270,12 +269,12 @@ export const HydrogenBackground: React.FC<HydrogenBackgroundProps> = ({
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < maxConnectionDistance) {
-            const bondAlpha = (1 - dist / maxConnectionDistance) * (isMinimal ? 0.08 : 0.22);
+            const bondAlpha = (1 - dist / maxConnectionDistance) * (isMinimal ? 0.16 : 0.25);
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
             ctx.strokeStyle = `rgba(0, 180, 216, ${bondAlpha})`;
-            ctx.lineWidth = isHero ? 0.85 : 0.5;
+            ctx.lineWidth = isHero ? 0.85 : 0.6;
             ctx.stroke();
           }
         }

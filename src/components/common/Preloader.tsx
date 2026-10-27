@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getAssetPath } from '../../utils/assetPath';
 import HydrogenBackground from './HydrogenBackground';
@@ -10,16 +10,26 @@ export interface PreloaderProps {
 
 export const Preloader: React.FC<PreloaderProps> = ({
   onComplete,
-  minDurationMs = 2200,
+  minDurationMs,
 }) => {
-  const [progress, setProgress] = useState(0);
-  const [isFinished, setIsFinished] = useState(false);
+  // Check if visitor has already experienced the intro preloader in this session
+  const alreadySeen = useMemo(() => {
+    try {
+      return typeof window !== 'undefined' && sessionStorage.getItem('h2_preloader_seen') === '1';
+    } catch {
+      return false;
+    }
+  }, []);
 
-  // Preload critical assets concurrently while animating progress
+  const [progress, setProgress] = useState(alreadySeen ? 100 : 0);
+  const [isFinished, setIsFinished] = useState(alreadySeen);
+
+  // Preload critical assets concurrently while animating progress (deduplicated modern formats)
   useEffect(() => {
+    if (alreadySeen) return;
+
     const criticalImages = [
       getAssetPath('/hero-clean.webp'),
-      getAssetPath('/hero-clean.jpg'),
       getAssetPath('/logo.webp'),
       getAssetPath('/logo-mark.webp'),
     ];
@@ -28,16 +38,23 @@ export const Preloader: React.FC<PreloaderProps> = ({
       const img = new Image();
       img.src = src;
     });
-  }, []);
+  }, [alreadySeen]);
 
-  // Natural progressive increment calculation
+  // Natural progressive increment calculation with adaptive device duration
   useEffect(() => {
+    if (alreadySeen) {
+      onComplete?.();
+      return;
+    }
+
+    // Adaptive duration: 750ms on mobile, 1100ms on desktop for swift loading
+    const duration = minDurationMs ?? (window.innerWidth < 768 ? 750 : 1100);
     const startTime = performance.now();
     let animationFrameId: number;
 
     const updateProgress = (currentTime: number) => {
       const elapsed = currentTime - startTime;
-      const rawProgress = Math.min(elapsed / minDurationMs, 1);
+      const rawProgress = Math.min(elapsed / duration, 1);
 
       // Ease-out cubic curve for natural feel
       const easedProgress = Math.floor((1 - Math.pow(1 - rawProgress, 3)) * 100);
@@ -48,10 +65,15 @@ export const Preloader: React.FC<PreloaderProps> = ({
         animationFrameId = requestAnimationFrame(updateProgress);
       } else {
         setProgress(100);
-        // Completion hold for 300ms for energy bloom before triggering exit
+        // Snappy completion hold of 100ms before exit
         setTimeout(() => {
+          try {
+            sessionStorage.setItem('h2_preloader_seen', '1');
+          } catch {
+            // Ignore sessionStorage access limits
+          }
           setIsFinished(true);
-        }, 300);
+        }, 100);
       }
     };
 
@@ -60,7 +82,7 @@ export const Preloader: React.FC<PreloaderProps> = ({
     return () => {
       cancelAnimationFrame(animationFrameId);
     };
-  }, [minDurationMs]);
+  }, [minDurationMs, alreadySeen, onComplete]);
 
   // Dynamic telemetry status message
   const getStatusMessage = (p: number) => {
@@ -71,6 +93,10 @@ export const Preloader: React.FC<PreloaderProps> = ({
     return '100% Clean Energy Ready';
   };
 
+  if (alreadySeen) {
+    return null;
+  }
+
   return (
     <AnimatePresence onExitComplete={onComplete}>
       {!isFinished && (
@@ -79,11 +105,10 @@ export const Preloader: React.FC<PreloaderProps> = ({
           initial={{ opacity: 1, scale: 1 }}
           exit={{
             opacity: 0,
-            scale: 1.05,
-            filter: 'blur(8px)',
+            scale: 1.02,
           }}
-          transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed inset-0 z-[9999] flex flex-col justify-between p-6 sm:p-10 md:p-14 bg-[#04142B] text-white select-none overflow-hidden"
+          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          className="fixed inset-0 z-[9999] flex flex-col justify-between p-6 sm:p-10 md:p-14 bg-[#04142B] text-white select-none overflow-hidden transform-gpu will-change-transform"
         >
           {/* Live Hydrogen Effervescence Canvas in background */}
           <div className="absolute inset-0 pointer-events-none opacity-40">
