@@ -68,7 +68,7 @@ export const HeroContent: React.FC = () => {
         <Button
           variant="primary"
           size="md"
-          href="#about-us"
+          href="#/about"
           showArrow
           className="px-7 py-3 font-semibold"
         >
@@ -78,7 +78,7 @@ export const HeroContent: React.FC = () => {
         <Button
           variant="secondary"
           size="md"
-          href="#our-focus"
+          href="#/our-focus"
           showArrow
           className="px-7 py-3 font-semibold"
         >

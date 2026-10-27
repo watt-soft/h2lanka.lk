@@ -36,14 +36,14 @@ export const AboutCTA: React.FC = () => {
           <Button
             variant="primary"
             size="md"
-            href="#our-focus"
+            href="#/our-focus"
             className="px-6 py-3 font-semibold shadow-lg shadow-cyan-500/20 bg-gradient-to-r from-emerald-600 to-[#00B4D8] hover:from-emerald-500 hover:to-[#38BDF8] text-white border-0"
           >
             Explore Our Solutions
           </Button>
 
           <a
-            href="#contact"
+            href="#/partners"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white text-sm font-semibold transition-all duration-200 group"
           >
             <span>Partner With Us</span>

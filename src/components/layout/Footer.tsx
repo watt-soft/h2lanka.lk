@@ -56,7 +56,7 @@ export const Footer: React.FC = () => {
               <Button
                 variant="primary"
                 size="md"
-                href="#contact"
+                href="#/contact"
                 className="px-6 py-3 font-semibold shadow-lg shadow-cyan-500/20"
               >
                 Get in Touch
@@ -78,7 +78,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12 pb-14 border-b border-slate-800/80">
           {/* Column 1: Brand & Mission (Wide 2-column span on large screens) */}
           <div className="lg:col-span-2 space-y-6">
-            <a href="#home" className="inline-block focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-lg" aria-label="H2 Lanka Home">
+            <a href="#/" className="inline-block focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-lg" aria-label="H2 Lanka Home">
               <Logo layout="horizontal" size="md" theme="dark" />
             </a>
 

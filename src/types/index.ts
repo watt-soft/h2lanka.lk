@@ -1,6 +1,7 @@
 export interface NavItem {
   name: string;
   href: string;
+  routeKey?: 'home' | 'about' | 'our-focus' | 'partners' | 'contact';
   isActive?: boolean;
 }
 

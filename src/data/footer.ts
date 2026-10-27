@@ -3,22 +3,22 @@ import type { FooterLink, FooterSection, SocialLink } from '../types';
 export const footerNavigation: FooterSection = {
   title: 'Quick Navigation',
   links: [
-    { label: 'Home', href: '#home' },
-    { label: 'About Us', href: '#about-us' },
-    { label: 'Our Focus', href: '#our-focus' },
-    { label: 'Strategic Partners', href: '#partners' },
-    { label: 'Contact Us', href: '#contact' },
+    { label: 'Home', href: '#/' },
+    { label: 'About Us', href: '#/about' },
+    { label: 'Our Focus', href: '#/our-focus' },
+    { label: 'Strategic Partners', href: '#/partners' },
+    { label: 'Contact Us', href: '#/contact' },
   ],
 };
 
 export const footerSolutions: FooterSection = {
   title: 'Hydrogen Focus',
   links: [
-    { label: 'Green Electrolysis & Pure H2', href: '#our-focus' },
-    { label: 'Solar & Wind Infrastructure', href: '#our-focus' },
-    { label: 'Industrial Decarbonization', href: '#our-focus' },
-    { label: 'Clean Storage & Logistics', href: '#our-focus' },
-    { label: 'Renewable Grid Balancing', href: '#our-focus' },
+    { label: 'Green Electrolysis & Pure H2', href: '#/our-focus' },
+    { label: 'Solar & Wind Infrastructure', href: '#/our-focus' },
+    { label: 'Industrial Decarbonization', href: '#/our-focus' },
+    { label: 'Clean Storage & Logistics', href: '#/our-focus' },
+    { label: 'Renewable Grid Balancing', href: '#/our-focus' },
   ],
 };
 

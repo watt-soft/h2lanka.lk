@@ -36,7 +36,7 @@ export const FocusCTA: React.FC = () => {
           <Button
             variant="primary"
             size="md"
-            href="#partners"
+            href="#/partners"
             className="px-6 py-3 font-semibold shadow-lg shadow-cyan-500/20 bg-gradient-to-r from-[#094792] to-[#00B4D8] hover:from-[#083870] hover:to-[#38BDF8] text-white border-0"
           >
             <Handshake className="w-4 h-4 mr-2" />
@@ -44,7 +44,7 @@ export const FocusCTA: React.FC = () => {
           </Button>
 
           <a
-            href="#contact"
+            href="#/contact"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white text-sm font-semibold transition-all duration-200 group"
           >
             <span>Get in Touch</span>
