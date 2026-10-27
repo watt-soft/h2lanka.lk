@@ -3,8 +3,17 @@ import { motion } from 'framer-motion';
 import { Search, Cpu, Activity, ShieldCheck, Rocket, ChevronRight } from 'lucide-react';
 import { pipelineStagesData } from '../../data/about';
 import type { PipelineStageItem } from '../../types/about';
+import { cn } from '../../utils/cn';
 
 export const ExecutionPipeline: React.FC = () => {
+  const pipelinePillSteps = [
+    { name: 'Research', isLast: false },
+    { name: 'Innovation', isLast: false },
+    { name: 'Demonstration', isLast: false },
+    { name: 'Investment', isLast: false },
+    { name: 'Commercialization', isLast: true },
+  ];
+
   const getStageIcon = (iconName: string) => {
     const props = { className: 'w-5 h-5 text-white' };
     switch (iconName) {
@@ -18,7 +27,7 @@ export const ExecutionPipeline: React.FC = () => {
   };
 
   return (
-    <div className="relative rounded-3xl p-7 sm:p-10 lg:p-12 bg-gradient-to-br from-[#041E40] via-[#062A56] to-[#03152E] text-white shadow-2xl border border-slate-700/60 overflow-hidden">
+    <div className="relative rounded-3xl p-5 sm:p-8 lg:p-12 bg-gradient-to-br from-[#041E40] via-[#062A56] to-[#03152E] text-white shadow-2xl border border-slate-700/60 overflow-hidden">
       {/* Background Energy Blooms */}
       <div className="absolute top-0 left-1/3 w-96 h-96 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none" />
@@ -35,18 +44,23 @@ export const ExecutionPipeline: React.FC = () => {
           Our integrated pathway moves promising clean hydrogen initiatives from initial theoretical modeling all the way to bankable utility deployment.
         </p>
 
-        {/* Philosophy Monospace Pill */}
-        <div className="pt-2">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-slate-900/80 border border-slate-700 font-mono text-xs sm:text-sm text-cyan-300 tracking-wider">
-            <span>Research</span>
-            <ChevronRight className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Innovation</span>
-            <ChevronRight className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Demonstration</span>
-            <ChevronRight className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Investment</span>
-            <ChevronRight className="w-3.5 h-3.5 text-emerald-400" />
-            <span className="text-emerald-400 font-bold">Commercialization</span>
+        {/* Philosophy Monospace Pathway */}
+        <div className="pt-2 flex justify-center">
+          <div className="inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1.5 px-3.5 sm:px-4 py-2 sm:py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/80 font-mono text-[11px] sm:text-xs md:text-sm text-cyan-300 tracking-wider max-w-full shadow-inner">
+            {pipelinePillSteps.map((step) => (
+              <span
+                key={step.name}
+                className={cn(
+                  'inline-flex items-center gap-1.5 whitespace-nowrap',
+                  step.isLast ? 'text-emerald-400 font-bold' : 'text-cyan-300'
+                )}
+              >
+                <span>{step.name}</span>
+                {!step.isLast && (
+                  <ChevronRight className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                )}
+              </span>
+            ))}
           </div>
         </div>
       </div>
