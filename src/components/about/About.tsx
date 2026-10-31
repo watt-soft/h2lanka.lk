@@ -7,6 +7,7 @@ import ValueChainGrid from './ValueChainGrid';
 import StrategicPillars from './StrategicPillars';
 import ExecutionPipeline from './ExecutionPipeline';
 import CommitmentsGrid from './CommitmentsGrid';
+import LeadershipSection from './LeadershipSection';
 import AboutCTA from './AboutCTA';
 
 export const About: React.FC = () => {
@@ -49,7 +50,10 @@ export const About: React.FC = () => {
         {/* 6. Core Values: Enduring Commitments */}
         <CommitmentsGrid />
 
-        {/* 7. Action Banner: Powering the Future */}
+        {/* 7. Leadership & Strategic Advisory */}
+        <LeadershipSection />
+
+        {/* 8. Action Banner: Powering the Future */}
         <AboutCTA />
       </Container>
     </section>

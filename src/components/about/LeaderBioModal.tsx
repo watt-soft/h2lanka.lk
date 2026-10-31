@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Award, Briefcase, GraduationCap, CheckCircle2, Mail, Sparkles } from 'lucide-react';
 import type { LeaderProfile } from '../../types/leadership';
@@ -42,11 +43,13 @@ export const LeaderBioModal: React.FC<LeaderBioModalProps> = ({ leader, onClose 
 
   const isAdvisory = leader?.category === 'advisory';
 
-  return (
+  if (typeof document === 'undefined') return null;
+
+  return createPortal(
     <AnimatePresence>
       {leader && (
         <div
-          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center sm:p-4 md:p-6 overflow-y-auto"
+          className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center sm:p-4 md:p-6 overflow-y-auto"
           role="dialog"
           aria-modal="true"
           aria-labelledby="leader-modal-name"
@@ -68,7 +71,7 @@ export const LeaderBioModal: React.FC<LeaderBioModalProps> = ({ leader, onClose 
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 30, scale: 0.98 }}
             transition={{ type: 'spring', damping: 28, stiffness: 350 }}
-            className="relative w-full max-w-4xl max-h-[92vh] sm:max-h-[88vh] bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl border border-slate-200/90 overflow-hidden flex flex-col z-10 overscroll-contain"
+            className="relative w-full max-w-4xl max-h-[85vh] sm:max-h-[85vh] bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl border border-slate-200/90 overflow-hidden flex flex-col z-10 overscroll-contain sm:my-auto"
           >
             {/* Modal Header Bar */}
             <div className="relative z-10 flex items-center justify-between px-5 sm:px-8 py-3.5 sm:py-4 border-b border-slate-100 bg-slate-50/80 backdrop-blur-sm shrink-0">
@@ -307,8 +310,10 @@ export const LeaderBioModal: React.FC<LeaderBioModalProps> = ({ leader, onClose 
           </motion.div>
         </div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 };
 
 export default LeaderBioModal;
+
