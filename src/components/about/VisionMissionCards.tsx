@@ -4,16 +4,16 @@ import { Compass, Target, CheckCircle2, ArrowRight } from 'lucide-react';
 
 export const VisionMissionCards: React.FC = () => {
   const visionHighlights = [
-    'Leading platform for green hydrogen & renewable energy integration',
-    'Catalyzing a competitive, low-carbon clean economy across South Asia',
-    'Connecting clean power, electrolysis, transport, and Power-to-X',
+    '[Vision Pillar 1: Long-term strategic aspiration] Lorem ipsum dolor sit amet.',
+    '[Vision Pillar 2: Market leadership & impact] Consectetur adipiscing elit.',
+    '[Vision Pillar 3: Technology and operational scale] Sed do eiusmod tempor.',
   ];
 
   const missionBridges = [
-    'Research & Technology',
-    'Policy & Regulation',
-    'Capital Investment',
-    'Commercial Deployment',
+    '[Pillar: Strategy]',
+    '[Pillar: Operations]',
+    '[Pillar: Technology]',
+    '[Pillar: Execution]',
   ];
 
   return (
@@ -34,7 +34,7 @@ export const VisionMissionCards: React.FC = () => {
           {/* Top Header Badge & Icon */}
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
-              Future Direction
+              [Direction: Corporate Vision]
             </span>
             <div className="w-12 h-12 rounded-2xl bg-emerald-500/15 border border-emerald-400/30 flex items-center justify-center text-emerald-300 shadow-inner group-hover:scale-105 transition-transform duration-300">
               <Compass className="w-6 h-6" />
@@ -46,12 +46,12 @@ export const VisionMissionCards: React.FC = () => {
               Our Vision
             </h3>
             <p className="mt-3 text-emerald-200/90 text-sm sm:text-base font-semibold leading-relaxed">
-              To become a leading Sri Lankan platform for green hydrogen, renewable energy integration, and clean-energy technology.
+              [Vision Statement: Define organization's ultimate long-term aspiration] Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
           </div>
 
           <p className="text-slate-300 text-sm leading-relaxed">
-            Our vision is to establish hydrogen as an indispensable pillar of Sri Lanka’s clean energy economy by connecting renewable power harvesting, green electrolysis production, storage, sustainable mobility, industrial decarbonization, and emerging Power-to-X technologies.
+            [Vision Narrative: Explain how the company aims to transform its industry through sustainable practices and innovation] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
 
           <div className="pt-2 space-y-2.5 border-t border-slate-700/60">
@@ -65,7 +65,7 @@ export const VisionMissionCards: React.FC = () => {
         </div>
 
         <div className="relative z-10 mt-6 pt-4 border-t border-slate-700/60 flex items-center justify-between text-xs text-emerald-300/80">
-          <span className="font-medium tracking-wide">Pioneering Sri Lanka’s Regional Clean Energy Platform</span>
+          <span className="font-medium tracking-wide">[Vision Footnote: Guiding principle summary]</span>
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300 text-emerald-400" />
         </div>
       </motion.div>
@@ -86,7 +86,7 @@ export const VisionMissionCards: React.FC = () => {
           {/* Top Header Badge & Icon */}
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full bg-[#094792]/10 text-[#083870] border border-[#094792]/20">
-              Operational Mandate
+              [Mandate: Corporate Mission]
             </span>
             <div className="w-12 h-12 rounded-2xl bg-[#094792]/10 border border-[#094792]/20 flex items-center justify-center text-[#094792] shadow-inner group-hover:scale-105 transition-transform duration-300">
               <Target className="w-6 h-6" />
@@ -98,17 +98,17 @@ export const VisionMissionCards: React.FC = () => {
               Our Mission
             </h3>
             <p className="mt-3 text-[#094792] text-sm sm:text-base font-semibold leading-relaxed">
-              Providing practical, commercially viable, and technically sound clean hydrogen solutions.
+              [Mission Statement: Define primary operational purpose and value delivered to clients] Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
           </div>
 
           <p className="text-slate-600 text-sm leading-relaxed">
-            We bridge the gap between research, technology, policy, investment, and commercial implementation, empowering industries to slash fossil-fuel reliance and transforming promising hydrogen technologies from concept into real-world, bankable operations.
+            [Mission Narrative: Detail practical execution methods, core strengths, and commercial standards] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
 
           <div className="pt-2">
             <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2.5">
-              Bridging Crucial Stages:
+              [Bridging Crucial Stages:]
             </div>
             <div className="grid grid-cols-2 gap-2">
               {missionBridges.map((bridge) => (
@@ -125,7 +125,7 @@ export const VisionMissionCards: React.FC = () => {
         </div>
 
         <div className="relative z-10 mt-6 pt-4 border-t border-slate-200/80 flex items-center justify-between text-xs text-slate-600">
-          <span className="font-medium tracking-wide text-[#094792]">From Demonstration to Industrial Scale</span>
+          <span className="font-medium tracking-wide text-[#094792]">[Mission Footnote: Strategic execution summary]</span>
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300 text-[#094792]" />
         </div>
       </motion.div>
@@ -134,4 +134,3 @@ export const VisionMissionCards: React.FC = () => {
 };
 
 export default VisionMissionCards;
-

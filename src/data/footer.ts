@@ -12,35 +12,34 @@ export const footerNavigation: FooterSection = {
 };
 
 export const footerSolutions: FooterSection = {
-  title: 'Hydrogen Focus',
+  title: '[Solutions: Core Offerings]',
   links: [
-    { label: 'Green Electrolysis & Pure H2', href: '#/our-focus' },
-    { label: 'Solar & Wind Infrastructure', href: '#/our-focus' },
-    { label: 'Industrial Decarbonization', href: '#/our-focus' },
-    { label: 'Clean Storage & Logistics', href: '#/our-focus' },
-    { label: 'Renewable Grid Balancing', href: '#/our-focus' },
+    { label: '[Offering 01: Primary Service]', href: '#/our-focus' },
+    { label: '[Offering 02: Secondary Service]', href: '#/our-focus' },
+    { label: '[Offering 03: Specialized Solution]', href: '#/our-focus' },
+    { label: '[Offering 04: Industrial Program]', href: '#/our-focus' },
+    { label: '[Offering 05: Advisory / Support]', href: '#/our-focus' },
   ],
 };
 
 export const footerContact = {
-  title: 'Headquarters & Inquiries',
-  address: 'Colombo, Sri Lanka',
-  email: 'info@h2lanka.lk',
-  phone: '+94 (11) 234-5678',
-  hours: 'Mon – Fri: 8:30 AM – 5:30 PM (SLST)',
-  registration: 'H2 Lanka (Pvt) Ltd • Reg. No: PV-00289140',
+  title: '[Contact: Headquarters & Inquiries]',
+  address: '[Address: 123 Business Avenue, Suite 100, City, Country]',
+  email: 'info@company.com',
+  phone: '+00 (00) 000-0000',
+  hours: '[Hours: Mon – Fri: 9:00 AM – 5:00 PM (Timezone)]',
+  registration: '[Company Name (Pvt) Ltd • Reg. No: PV-00000000]',
 };
 
 export const footerSocials: SocialLink[] = [
-  { platform: 'linkedin', href: 'https://linkedin.com', ariaLabel: 'H2 Lanka on LinkedIn' },
-  { platform: 'twitter', href: 'https://twitter.com', ariaLabel: 'H2 Lanka on X / Twitter' },
-  { platform: 'youtube', href: 'https://youtube.com', ariaLabel: 'H2 Lanka on YouTube' },
-  { platform: 'mail', href: 'mailto:info@h2lanka.lk', ariaLabel: 'Send an email to H2 Lanka' },
+  { platform: 'linkedin', href: 'https://linkedin.com', ariaLabel: 'Company on LinkedIn' },
+  { platform: 'twitter', href: 'https://twitter.com', ariaLabel: 'Company on X / Twitter' },
+  { platform: 'youtube', href: 'https://youtube.com', ariaLabel: 'Company on YouTube' },
+  { platform: 'mail', href: 'mailto:info@company.com', ariaLabel: 'Send an email to Company' },
 ];
 
 export const footerLegalLinks: FooterLink[] = [
   { label: 'Privacy Policy', href: '#privacy' },
   { label: 'Terms of Service', href: '#terms' },
-  { label: 'Environmental & Carbon Compliance', href: '#compliance' },
+  { label: '[Compliance: Regulatory Standards]', href: '#compliance' },
 ];
-

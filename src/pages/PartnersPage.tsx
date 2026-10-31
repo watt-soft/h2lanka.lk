@@ -15,56 +15,60 @@ import HydrogenBackground from '../components/common/HydrogenBackground';
 
 export const PartnersPage: React.FC = () => {
   useEffect(() => {
-    document.title = 'Strategic Partners | H2 Lanka (Pvt) Ltd';
+    document.title = 'Strategic Partners | [Company Name]';
   }, []);
 
   const partnerPillars = [
     {
       id: 'korean-alliance',
-      title: 'Korean Clean-Tech Alliance',
-      subtitle: 'Advanced Electrolysis & FCEV Tech',
-      description: 'Forging deep strategic alliances with South Korea’s leading hydrogen technology providers, electrolyzer manufacturers, and fuel-cell infrastructure innovators to localize advanced hardware for South Asia.',
+      title: '[Partnership Category 01: Strategic Alliances]',
+      subtitle: '[Alliance Subtitle: Hardware & Technology]',
+      description:
+        '[Alliance Overview: Describe key collaborative objectives and mutual value creation] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.',
       icon: <Cpu className="w-6 h-6 text-[#00B4D8]" />,
       highlights: [
-        'Hardware localization and balance-of-plant integration',
-        'Direct partnerships with tier-1 Korean hydrogen EPCs',
-        'High-pressure fueling infrastructure technology transfer',
+        '[Highlight 1: Technology transfer] Lorem ipsum dolor sit amet.',
+        '[Highlight 2: Hardware localization] Consectetur adipiscing elit.',
+        '[Highlight 3: Infrastructure engineering] Sed do eiusmod tempor.',
       ],
     },
     {
       id: 'climate-finance',
-      title: 'Bilateral & Climate Financing',
-      subtitle: 'Bankable Green Capital',
-      description: 'Collaborating with multilateral climate funds, regional development banks, and institutional clean-energy investors to structure blended finance for utility-scale green hydrogen projects in Sri Lanka.',
+      title: '[Partnership Category 02: Capital & Financing]',
+      subtitle: '[Alliance Subtitle: Bankable Capital]',
+      description:
+        '[Alliance Overview: Institutional investors, development funding, and commercial finance structuring] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.',
       icon: <Building2 className="w-6 h-6 text-emerald-500" />,
       highlights: [
-        'Concessional green debt and carbon credit financing',
-        'Risk-sharing frameworks for pioneer demonstration plants',
-        'Comprehensive bankability and techno-economic audits',
+        '[Highlight 1: Debt and equity structuring] Lorem ipsum dolor sit amet.',
+        '[Highlight 2: Risk-mitigation syndicates] Consectetur adipiscing elit.',
+        '[Highlight 3: Bankability validation] Sed do eiusmod tempor.',
       ],
     },
     {
       id: 'research-universities',
-      title: 'Academic & R&D Consortia',
-      subtitle: 'Knowledge Transfer & Capacity',
-      description: 'Bridging premier Sri Lankan universities and technical research bodies with global clean-energy laboratories to nurture local engineering talent, technical standards, and certified safety operators.',
+      title: '[Partnership Category 03: Academic & Research]',
+      subtitle: '[Alliance Subtitle: Knowledge Transfer]',
+      description:
+        '[Alliance Overview: Collaborative technical research, workforce development, and certified standards] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.',
       icon: <GraduationCap className="w-6 h-6 text-[#094792]" />,
       highlights: [
-        'Joint scientific studies on tropical electrolysis efficiency',
-        'Hydrogen safety and technical workforce certification',
-        'Academic exchange programs and localized PhD research',
+        '[Highlight 1: Applied joint research] Lorem ipsum dolor sit amet.',
+        '[Highlight 2: Workforce certification] Consectetur adipiscing elit.',
+        '[Highlight 3: Academic exchange programs] Sed do eiusmod tempor.',
       ],
     },
     {
       id: 'industry-offtake',
-      title: 'Industrial Offtake Alliances',
-      subtitle: 'Decarbonizing Heavy Consumers',
-      description: 'Engaging domestic port authorities, textile manufacturers, tea processing clusters, and fertilizer producers under long-term clean hydrogen supply agreements.',
+      title: '[Partnership Category 04: Industrial Offtake]',
+      subtitle: '[Alliance Subtitle: Commercial Integration]',
+      description:
+        '[Alliance Overview: Commercial client agreements, enterprise supply contracts, and industrial consortiums] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.',
       icon: <Handshake className="w-6 h-6 text-teal-600" />,
       highlights: [
-        'Green ammonia bunkering at Colombo & Hambantota ports',
-        'Industrial thermal energy substitution roadmaps',
-        'Cross-sector decarbonization consortium building',
+        '[Highlight 1: Long-term commercial contracts] Lorem ipsum dolor sit amet.',
+        '[Highlight 2: Operational fuel substitution] Consectetur adipiscing elit.',
+        '[Highlight 3: Industrial consortium building] Sed do eiusmod tempor.',
       ],
     },
   ];
@@ -75,14 +79,13 @@ export const PartnersPage: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -15 }}
       transition={{ duration: 0.35, ease: 'easeOut' }}
-    // className="pt-16 sm:pt-20 lg:pt-24"
     >
       <section
         id="partners"
         className="relative py-20 sm:py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-white via-slate-50/80 to-white"
         aria-label="Strategic Partners"
       >
-        {/* Subtle Hydrogen Micro-Particle Atmosphere (Viewport-pinned for 60 FPS performance) */}
+        {/* Atmospheric Particle Background */}
         <div className="sticky top-0 h-screen w-full pointer-events-none overflow-hidden -mb-[100vh] z-0">
           <HydrogenBackground
             variant="minimal"
@@ -101,19 +104,19 @@ export const PartnersPage: React.FC = () => {
           <div className="relative max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
             <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/25 text-[#083870] text-[11px] sm:text-xs md:text-sm font-semibold tracking-wide shadow-xs max-w-full">
               <Globe className="w-3.5 h-3.5 text-[#00B4D8] shrink-0" />
-              <span className="sm:hidden whitespace-nowrap">GLOBAL ALLIANCES</span>
-              <span className="hidden sm:inline whitespace-nowrap">GLOBAL & KOREAN COLLABORATION</span>
+              <span className="sm:hidden whitespace-nowrap">[STRATEGIC ALLIANCES]</span>
+              <span className="hidden sm:inline whitespace-nowrap">[STRATEGIC ALLIANCES & COLLABORATION]</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-extrabold text-[#062A56] tracking-tight leading-[1.12]">
               Building Strategic{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00B4D8] via-[#0284C7] to-[#10B981]">
-                International Partnerships
+                [International Partnerships]
               </span>
             </h2>
 
             <p className="text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed max-w-3xl mx-auto font-normal">
-              The development of a competitive hydrogen economy requires robust synergy across governments, technology innovators, researchers, utilities, and green financiers. H2 Lanka is the trusted regional gateway connecting Sri Lanka with the world.
+              [Overview: Explain the importance of cross-sector partnerships, investor alliances, and institutional backing in achieving company objectives] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
           </div>
 
@@ -168,13 +171,13 @@ export const PartnersPage: React.FC = () => {
             <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
               <div className="max-w-2xl space-y-4">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-400/30 text-xs font-semibold tracking-wide">
-                  <span>INITIATE AN ALLIANCE</span>
+                  <span>[INITIATE AN ALLIANCE]</span>
                 </div>
                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
-                  Interested in Exploring Joint Clean-Tech Opportunities?
+                  [Callout Headline: Interested in Exploring Joint Business Opportunities?]
                 </h3>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                  Connect directly with our corporate development and international relations leadership in Colombo to discuss technology transfer, pilot demonstration, or green investment.
+                  [Callout Description: Connect directly with our corporate development and leadership team to discuss strategic alliances, investment, or projects] Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </p>
               </div>
 
@@ -185,9 +188,9 @@ export const PartnersPage: React.FC = () => {
                   href="#/contact"
                   fullWidth="mobile"
                   icon={<Mail className="w-4 h-4" />}
-                  mobileText="Contact Alliances"
+                  mobileText="[Contact Alliances]"
                 >
-                  Contact Our Alliances Team
+                  [Contact Our Alliances Team]
                 </Button>
 
                 <Button
@@ -197,7 +200,7 @@ export const PartnersPage: React.FC = () => {
                   fullWidth="mobile"
                   showArrow
                 >
-                  Explore Capabilities
+                  [Explore Capabilities]
                 </Button>
               </div>
             </div>

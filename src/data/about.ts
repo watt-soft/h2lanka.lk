@@ -8,152 +8,168 @@ import type {
 
 export const aboutMetricsData: AboutMetricItem[] = [
   {
-    id: 'green-electrolysis',
-    value: '100% Green',
-    label: 'Electrolysis Pathway',
-    description: 'Renewable-energy-based hydrogen generation using water splitting with zero carbon emission.',
+    id: 'metric-01',
+    value: '100%',
+    label: '[Metric 01: Core Performance]',
+    description:
+      '[Description: Highlight metric scope and achievement] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.',
   },
   {
-    id: 'renewable-resources',
-    value: 'Solar & Wind',
-    label: 'Tropical Advantage',
-    description: 'Capitalizing on Sri Lanka’s abundant solar irradiance and coastal wind corridors.',
+    id: 'metric-02',
+    value: '250+',
+    label: '[Metric 02: Scale & Reach]',
+    description:
+      '[Description: Emphasize scale, capacity, or user base] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.',
   },
   {
-    id: 'global-alliances',
-    value: 'Global Alliances',
-    label: 'Korean & World Tech',
-    description: 'Direct collaboration with premier international hydrogen technology providers and researchers.',
+    id: 'metric-03',
+    value: 'Global',
+    label: '[Metric 03: Strategic Network]',
+    description:
+      '[Description: Describe international alliances or ecosystem] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.',
   },
   {
-    id: 'integrated-pathway',
+    id: 'metric-04',
     value: 'End-to-End',
-    label: 'Value Chain Coverage',
-    description: 'From feasibility and techno-economic modeling to commercial facility deployment.',
+    label: '[Metric 04: Full Lifecycle]',
+    description:
+      '[Description: Detail comprehensive end-to-end service coverage] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.',
   },
 ];
 
 export const valueChainData: ValueChainItem[] = [
   {
-    id: 'green-production',
-    title: 'Green Hydrogen Production',
+    id: 'capability-01',
+    title: '[Capability 01: Primary Core Service]',
     category: 'production',
     categoryLabel: 'Production & Storage',
-    description: 'Renewable-energy-based hydrogen production utilizing advanced water electrolysis systems powered by solar and wind.',
+    description:
+      '[Service Scope: Detail the technical solution and operational methodology] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.',
     iconName: 'Zap',
-    tags: ['Water Electrolysis', 'PEM & Alkaline', 'Zero Carbon'],
+    tags: ['[Tag: Specification]', '[Tag: Standard]', '[Tag: Impact]'],
   },
   {
-    id: 'renewable-integration',
-    title: 'Renewable Energy Integration',
+    id: 'capability-02',
+    title: '[Capability 02: Systems Integration]',
     category: 'production',
     categoryLabel: 'Production & Storage',
-    description: 'Seamless integration of solar PV, onshore/offshore wind, and hybrid power systems directly with hydrogen electrolyzer stacks.',
+    description:
+      '[Service Scope: Detail systems integration and engineering approach] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.',
     iconName: 'Sun',
-    tags: ['Solar & Wind', 'Grid Balancing', 'Hybrid Microgrids'],
+    tags: ['[Tag: Architecture]', '[Tag: Infrastructure]', '[Tag: Efficiency]'],
   },
   {
-    id: 'storage-distribution',
-    title: 'Hydrogen Storage & Distribution',
+    id: 'capability-03',
+    title: '[Capability 03: Storage & Distribution]',
     category: 'production',
     categoryLabel: 'Production & Storage',
-    description: 'Engineering safe, high-efficiency storage solutions including compressed gaseous vessels, liquid carriers, and regional pipeline logistics.',
+    description:
+      '[Service Scope: Detail storage, safety protocols, and regional logistics] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.',
     iconName: 'Database',
-    tags: ['High-Pressure Gas', 'Liquid Carriers', 'Safe Logistics'],
+    tags: ['[Tag: Safety Standard]', '[Tag: Capacity]', '[Tag: Logistics]'],
   },
   {
-    id: 'hydrogen-mobility',
-    title: 'Hydrogen Mobility',
+    id: 'capability-04',
+    title: '[Capability 04: Mobility & Fleet Solutions]',
     category: 'applications',
     categoryLabel: 'Applications & Power-to-X',
-    description: 'Deployment of hydrogen fuel-cell electric vehicles (FCEVs), heavy-duty fleet solutions, and integrated hydrogen refuelling infrastructure.',
+    description:
+      '[Service Scope: Detail operational deployment in transportation and logistics] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.',
     iconName: 'Truck',
-    tags: ['FCEV Fleets', 'Refuelling Stations', 'Clean Transport'],
+    tags: ['[Tag: Fleet Deployment]', '[Tag: Infrastructure]', '[Tag: Zero Emission]'],
   },
   {
-    id: 'industrial-applications',
-    title: 'Industrial Hydrogen Applications',
+    id: 'capability-05',
+    title: '[Capability 05: Industrial Applications]',
     category: 'applications',
     categoryLabel: 'Applications & Power-to-X',
-    description: 'Supporting manufacturing, thermal heating, chemical processing, and tea/textile industries in substituting fossil fuels with hydrogen.',
+    description:
+      '[Service Scope: Detail manufacturing transformation and process decarbonization] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.',
     iconName: 'Factory',
-    tags: ['Thermal Substitution', 'Hard-to-Abate Sectors', 'Zero Smoke'],
+    tags: ['[Tag: Heavy Industry]', '[Tag: Process Thermal]', '[Tag: Efficiency]'],
   },
   {
-    id: 'power-to-x',
-    title: 'Power-to-X Solutions',
+    id: 'capability-06',
+    title: '[Capability 06: Power-to-X / Value Synthesis]',
     category: 'applications',
     categoryLabel: 'Applications & Power-to-X',
-    description: 'Synthesizing hydrogen-derived value-added fuels and chemicals including green ammonia, e-methanol, and clean chemical feedstocks.',
+    description:
+      '[Service Scope: Detail synthesized clean commodities and international trade] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.',
     iconName: 'Sparkles',
-    tags: ['Green Ammonia', 'E-Methanol', 'Synthetic Fuels'],
+    tags: ['[Tag: Derivative Fuel]', '[Tag: Export Market]', '[Tag: Green Supply]'],
   },
   {
-    id: 'pilot-demonstrations',
-    title: 'Pilot & Demonstration Projects',
+    id: 'capability-07',
+    title: '[Capability 07: Pilot & Demonstrations]',
     category: 'consultancy',
     categoryLabel: 'Consultancy & Global',
-    description: 'Developing operational pilot projects to test technology, de-risk deployments, and establish technical and commercial viability in Sri Lanka.',
+    description:
+      '[Service Scope: Detail proof-of-concept modeling and field validation testing] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.',
     iconName: 'Layers',
-    tags: ['Proof of Concept', 'De-risking', 'Commercial Viability'],
+    tags: ['[Tag: Proof of Concept]', '[Tag: De-risking]', '[Tag: Viability]'],
   },
   {
-    id: 'technical-consultancy',
-    title: 'Technical Consultancy & Advisory',
+    id: 'capability-08',
+    title: '[Capability 08: Technical Advisory]',
     category: 'consultancy',
     categoryLabel: 'Consultancy & Global',
-    description: 'Full-spectrum engineering advisory, techno-economic feasibility studies, energy modeling, resource assessment, and project structuring.',
+    description:
+      '[Service Scope: Detail full-spectrum engineering advisory and financial modeling] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.',
     iconName: 'LineChart',
-    tags: ['Techno-Economics', 'Feasibility Studies', 'System Modeling'],
+    tags: ['[Tag: Feasibility Study]', '[Tag: Financial Model]', '[Tag: Due Diligence]'],
   },
   {
-    id: 'international-collaboration',
-    title: 'International Technology Collaboration',
+    id: 'capability-09',
+    title: '[Capability 09: Global Collaboration]',
     category: 'consultancy',
     categoryLabel: 'Consultancy & Global',
-    description: 'Connecting Sri Lankan utilities and enterprises with leading global technology providers, Korean innovators, universities, and investors.',
+    description:
+      '[Service Scope: Detail international technology transfer and investor syndication] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.',
     iconName: 'Globe',
-    tags: ['Tech Transfer', 'Joint R&D', 'Foreign Investment'],
+    tags: ['[Tag: Tech Transfer]', '[Tag: Joint R&D]', '[Tag: Global Capital]'],
   },
 ];
 
 export const strategicPillarsData: StrategicPillarItem[] = [
   {
-    id: 'innovation-research',
-    title: 'Innovation Through Research and Technology',
-    subtitle: 'Evidence-Based Engineering & Systems Modeling',
-    description: 'H2 Lanka places a relentless emphasis on research, innovation, and evidence-based technology development. Our multi-disciplinary approach blends renewable engineering, hydrogen thermodynamics, techno-economic modeling, and national energy-policy perspectives.',
+    id: 'pillar-01',
+    title: '[Pillar 01: Research & Technology Innovation]',
+    subtitle: '[Subtitle: Evidence-based engineering and system modeling]',
+    description:
+      '[Description: Detail corporate emphasis on technological innovation, research methods, and multi-disciplinary execution] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio praesent libero sed cursus ante dapibus diam.',
     iconName: 'Microscope',
     highlights: [
-      'Comprehensive techno-economic feasibility and system simulation',
-      'Optimized match between variable solar/wind output and electrolyzer dynamics',
-      'Economically competitive and scalable solutions engineered for Sri Lanka’s power grid',
+      '[Highlight 1: Techno-economic feasibility] Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      '[Highlight 2: System design & simulation] Curabitur sodales ligula in libero sed dignissim lacinia.',
+      '[Highlight 3: Scalable engineering] Mauris massa vestibulum lacinia arcu eget nulla imperdiet.',
     ],
     accentColor: 'blue',
   },
   {
-    id: 'international-partnerships',
-    title: 'Building International Partnerships',
-    subtitle: 'Connecting Sri Lanka with Global & Korean Clean-Tech Leaders',
-    description: 'Establishing a thriving hydrogen ecosystem demands deep cross-border collaboration. H2 Lanka actively partners with Korean and world-leading hydrogen technology companies, academic institutes, renewable developers, and green financiers.',
+    id: 'pillar-02',
+    title: '[Pillar 02: Strategic Global Alliances]',
+    subtitle: '[Subtitle: Bridging local operations with international leaders]',
+    description:
+      '[Description: Detail cross-border collaboration, tier-1 technical partnerships, and institutional investor frameworks] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio praesent libero sed cursus ante dapibus diam.',
     iconName: 'Handshake',
     highlights: [
-      'Bilateral technology transfer and advanced hardware localization',
-      'Joint demonstration projects and bilateral green finance structuring',
-      'Technical capacity building and specialized workforce training in Sri Lanka',
+      '[Highlight 1: Technology transfer] Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      '[Highlight 2: Co-development & pilots] Curabitur sodales ligula in libero sed dignissim lacinia.',
+      '[Highlight 3: Capacity building] Mauris massa vestibulum lacinia arcu eget nulla imperdiet.',
     ],
     accentColor: 'cyan',
   },
   {
-    id: 'focus-sri-lanka',
-    title: 'Our Focus on Sri Lanka',
-    subtitle: 'Harnessing Tropical Wind & Solar for National Energy Sovereignty',
-    description: 'Sri Lanka possesses prime geographical and climatic conditions for world-class solar and coastal wind generation. Converting these renewable assets into green hydrogen empowers the nation to reduce costly fossil imports, secure domestic energy supplies, and export clean energy carriers.',
+    id: 'pillar-03',
+    title: '[Pillar 03: Domestic Impact & Sovereignty]',
+    subtitle: '[Subtitle: Driving national sustainability and economic resilience]',
+    description:
+      '[Description: Detail strategic focus on local resource optimization, import substitution, and green job creation] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio praesent libero sed cursus ante dapibus diam.',
     iconName: 'Compass',
     highlights: [
-      'Radically curtailing national expenditure on imported petroleum and gas',
-      'Decarbonizing key export sectors (textiles, tea, ceramics, and port logistics)',
-      'Positioning Sri Lanka as a strategic green hydrogen and bunkering hub in South Asia',
+      '[Highlight 1: Economic sovereignty] Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      '[Highlight 2: Industrial transition] Curabitur sodales ligula in libero sed dignissim lacinia.',
+      '[Highlight 3: Regional market leadership] Mauris massa vestibulum lacinia arcu eget nulla imperdiet.',
     ],
     accentColor: 'green',
   },
@@ -162,76 +178,85 @@ export const strategicPillarsData: StrategicPillarItem[] = [
 export const pipelineStagesData: PipelineStageItem[] = [
   {
     step: 1,
-    title: 'Research',
-    subtitle: 'Assessment & Modeling',
-    description: 'In-depth renewable resource mapping, grid integration simulations, and techno-economic modeling tailored to site conditions.',
+    title: '[Phase 01: Research]',
+    subtitle: '[Assessment & Baseline]',
+    description:
+      '[Phase Objective: Renewable mapping, feasibility modeling, and baseline diagnostics] Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     iconName: 'Search',
   },
   {
     step: 2,
-    title: 'Innovation',
-    subtitle: 'Engineering & Selection',
-    description: 'Precision technology matching (PEM vs. Alkaline), balance-of-plant design, and regulatory compliance alignment.',
+    title: '[Phase 02: Engineering]',
+    subtitle: '[Design & Specification]',
+    description:
+      '[Phase Objective: Precision architecture selection, balance-of-plant design, and compliance] Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     iconName: 'Cpu',
   },
   {
     step: 3,
-    title: 'Demonstration',
-    subtitle: 'Pilot Deployments',
-    description: 'Executing modular demonstration facilities to validate real-world operational efficiency, safety, and reliability.',
+    title: '[Phase 03: Demonstration]',
+    subtitle: '[Pilot Deployment]',
+    description:
+      '[Phase Objective: Modular facility deployment to validate operational efficiency and safety] Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     iconName: 'Activity',
   },
   {
     step: 4,
-    title: 'Investment',
-    subtitle: 'Structuring & Capital',
-    description: 'Bankability validation, stakeholder syndicate formation, and international climate finance mobilization.',
+    title: '[Phase 04: Capital]',
+    subtitle: '[Financing & Structuring]',
+    description:
+      '[Phase Objective: Bankability validation, syndicate formation, and international climate finance] Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     iconName: 'ShieldCheck',
   },
   {
     step: 5,
-    title: 'Commercialization',
-    subtitle: 'Full-Scale Rollout',
-    description: 'Scaling to utility-scale green hydrogen production, industrial offtake supply agreements, and regional export logistics.',
+    title: '[Phase 05: Commercialization]',
+    subtitle: '[Full-Scale Scaling]',
+    description:
+      '[Phase Objective: Scaling to utility operations, long-term offtake, and regional distribution] Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     iconName: 'Rocket',
   },
 ];
 
 export const commitmentsData: CommitmentItem[] = [
   {
-    id: 'sustainability',
-    title: 'Sustainability',
-    description: 'Promoting verifiable solutions that slash greenhouse-gas emissions, conserve natural resources, and support long-term ecological balance.',
+    id: 'commitment-01',
+    title: '[Value 01: Sustainability]',
+    description:
+      '[Standard: Verifiable environmental stewardship and long-term ecological balance] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.',
     iconName: 'Leaf',
     accent: '#10B981',
   },
   {
-    id: 'innovation',
-    title: 'Innovation',
-    description: 'Pioneering cutting-edge clean technologies and agile engineering frameworks to address emerging energy challenges.',
+    id: 'commitment-02',
+    title: '[Value 02: Innovation]',
+    description:
+      '[Standard: Pioneering clean technology and agile engineering frameworks] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.',
     iconName: 'Lightbulb',
     accent: '#00B4D8',
   },
   {
-    id: 'partnership',
-    title: 'Partnership',
-    description: 'Cultivating trusted, high-value alliances across international tech leaders, domestic industries, utilities, and research centers.',
+    id: 'commitment-03',
+    title: '[Value 03: Partnership]',
+    description:
+      '[Standard: Cultivating trusted, high-value alliances across public and private sectors] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.',
     iconName: 'Users',
     accent: '#094792',
   },
   {
-    id: 'integrity',
-    title: 'Integrity',
-    description: 'Upholding impeccable professional standards, environmental safety, corporate transparency, and responsible governance.',
+    id: 'commitment-04',
+    title: '[Value 04: Integrity]',
+    description:
+      '[Standard: Upholding transparent governance, industrial safety, and professional ethics] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.',
     iconName: 'ShieldCheck',
     accent: '#059669',
   },
   {
-    id: 'impact',
-    title: 'Impact',
-    description: 'Focusing squarely on projects that deliver measurable decarbonization metrics, economic sovereignty, and high-value domestic careers.',
+    id: 'commitment-05',
+    title: '[Value 05: Impact]',
+    description:
+      '[Standard: Delivering measurable decarbonization, financial returns, and career growth] Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.',
     iconName: 'Award',
     accent: '#083870',
   },
 ];
-
