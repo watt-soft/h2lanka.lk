@@ -7,7 +7,7 @@ export const footerNavigation: FooterSection = {
     { label: 'About Us', href: '#/about' },
     { label: 'Our Focus', href: '#/our-focus' },
     { label: 'Strategic Partners', href: '#/partners' },
-    { label: 'Contact Us', href: '#/contact' },
+    { label: 'Contact Us', href: '#footer-contact' },
   ],
 };
 
