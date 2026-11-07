@@ -27,9 +27,9 @@ export const PillarCard: React.FC<PillarCardProps> = ({ pillar, hasDivider = fal
         <h3 className="text-base sm:text-lg md:text-xs lg:text-sm font-bold text-[#083870] group-hover:text-[#094792] transition-colors duration-200 leading-snug">
           {pillar.title}
         </h3>
-        <p className="mt-0.5 text-xs md:text-[11px] lg:text-xs text-slate-600 leading-relaxed max-w-xs line-clamp-2">
+        {/* <p className="mt-0.5 text-xs md:text-[11px] lg:text-xs text-slate-600 leading-relaxed max-w-xs line-clamp-2">
           {pillar.description}
-        </p>
+        </p> */}
       </div>
     </motion.div>
   );
