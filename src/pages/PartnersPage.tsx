@@ -12,8 +12,19 @@ import {
 import Container from '../components/layout/Container';
 import Button from '../components/common/Button';
 import HydrogenBackground from '../components/common/HydrogenBackground';
+import { getAssetPath } from '../utils/assetPath';
 
 export const PartnersPage: React.FC = () => {
+  const partnerLogos = [
+    { name: 'G Philos', image: '/partners/g-philos.jpg' },
+    { name: 'H2 Korea', image: '/partners/h2-korea.png' },
+    { name: 'KOGAS', image: '/partners/kogas.png' },
+    { name: 'ICBT Campus', image: '/partners/icbt.jpg' },
+    { name: 'Hydrogen New Zealand', image: '/partners/hydrogen-new-zealand.webp' },
+    { name: 'INSEE', image: '/partners/insee.png' },
+    { name: 'University of Vavuniya', image: '/partners/university-of-vavuniya.png' },
+  ];
+
   const partnerPillars = [
     {
       id: 'korean-alliance',
@@ -75,7 +86,7 @@ export const PartnersPage: React.FC = () => {
     >
       <section
         id="partners"
-        className="relative scroll-mt-20 sm:scroll-mt-24 py-20 sm:py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-white via-slate-50/80 to-white"
+        className="relative  py-10 sm:py-10 lg:py-10 overflow-hidden bg-gradient-to-b from-white via-slate-50/80 to-white"
         aria-label="Strategic Partners"
       >
         {/* Subtle Hydrogen Micro-Particle Atmosphere (Viewport-pinned for 60 FPS performance) */}
@@ -92,29 +103,48 @@ export const PartnersPage: React.FC = () => {
         <div className="absolute top-1/4 -left-12 w-96 h-96 rounded-full bg-cyan-500/15 blur-3xl pointer-events-none" />
         <div className="absolute top-2/3 -right-12 w-[450px] h-[450px] rounded-full bg-emerald-500/12 blur-3xl pointer-events-none" />
 
-        <Container size="xl" className="relative z-10 space-y-20 sm:space-y-24 lg:space-y-32">
+        <Container size="xl" className="relative z-10 space-y-10 sm:space-y-14 lg:space-y-10">
           {/* Header */}
           <div className="relative max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/25 text-[#083870] text-[11px] sm:text-xs md:text-sm font-semibold tracking-wide shadow-xs max-w-full">
-              <Globe className="w-3.5 h-3.5 text-[#00B4D8] shrink-0" />
-              <span className="sm:hidden whitespace-nowrap">GLOBAL ALLIANCES</span>
-              <span className="hidden sm:inline whitespace-nowrap">GLOBAL & KOREAN COLLABORATION</span>
-            </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-extrabold text-[#062A56] tracking-tight leading-[1.12]">
-              Building Strategic{' '}
+
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#062A56] tracking-tight leading-tight">
+              Our{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00B4D8] via-[#0284C7] to-[#10B981]">
-                International Partnerships
+                Partners
               </span>
             </h2>
 
-            <p className="text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed max-w-3xl mx-auto font-normal">
-              The development of a competitive hydrogen economy requires robust synergy across governments, technology innovators, researchers, utilities, and green financiers. H2 Lanka is the trusted regional gateway connecting Sri Lanka with the world.
-            </p>
           </div>
 
+          {/* Partner Logos */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-30px' }}
+            transition={{ duration: 0.5 }}
+            className="w-full overflow-x-auto pb-2"
+            aria-label="Partner organizations"
+          >
+            <div className="flex min-w-max items-center justify-center gap-4 sm:gap-6">
+              {partnerLogos.map((partner) => (
+                <div
+                  key={partner.name}
+                  className="flex h-24 w-36 sm:h-28 sm:w-40 shrink-0 items-center justify-center rounded-2xl border border-slate-200/80 bg-white/90 p-4 shadow-sm"
+                >
+                  <img
+                    src={getAssetPath(partner.image)}
+                    alt={partner.name}
+                    className="max-h-full max-w-full object-contain"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
           {/* 4 Partnership Pillars Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {partnerPillars.map((pillar, idx) => (
               <motion.div
                 key={pillar.id}
@@ -151,10 +181,10 @@ export const PartnersPage: React.FC = () => {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </div> */}
 
           {/* Callout Action Ribbon */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
@@ -197,7 +227,7 @@ export const PartnersPage: React.FC = () => {
                 </Button>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
         </Container>
       </section>
     </motion.div>
