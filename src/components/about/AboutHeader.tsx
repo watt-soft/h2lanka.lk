@@ -13,47 +13,26 @@ export const AboutHeader: React.FC = () => {
 
   return (
     <div className="relative max-w-5xl mx-auto text-center space-y-6 sm:space-y-8">
-      {/* Eyebrow Badge */}
-      <motion.div
-        initial={{ opacity: 0, y: 15 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[#083870] text-[11px] sm:text-xs md:text-sm font-semibold tracking-wide shadow-xs max-w-full"
-      >
-        <span className="relative flex h-2 w-2 shrink-0">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-        </span>
-        <span className="sm:hidden whitespace-nowrap">ABOUT H2 LANKA</span>
-        <span className="hidden sm:inline whitespace-nowrap">ABOUT H2 LANKA • CATALYZING CLEAN ENERGY</span>
-      </motion.div>
-
-      {/* Main Section Headline */}
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-extrabold text-[#062A56] tracking-tight leading-[1.12]"
-      >
-        Pioneering Sri Lanka’s{' '}
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10B981] via-[#059669] to-[#00B4D8]">
-          Green Hydrogen
-        </span>{' '}
-        Ecosystem
-      </motion.h2>
+      
 
       {/* Narrative Lead Paragraph */}
-      <motion.p
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed max-w-3xl mx-auto font-normal"
+        className="max-w-3xl mx-auto space-y-5 text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed font-normal"
       >
-        <strong className="font-semibold text-[#083870]">H2 Lanka (Pvt) Ltd.</strong> is a Sri Lankan clean energy and hydrogen technology venture dedicated to accelerating the transition towards a low-carbon, sustainable, and energy-secure future. We develop, integrate, and promote innovative green hydrogen and renewable energy solutions for Sri Lanka and the wider South Asian region.
-      </motion.p>
+        <p>
+          <strong className="font-semibold text-[#083870]">H2 Lanka (Pvt) Ltd.</strong> is a pioneering clean energy company dedicated to accelerating Sri Lanka's Energy transition towards a sustainable hydrogen economy. The company specializes in the development, promotion, and implementation of green hydrogen technologies, renewable energy solutions, decarbonization strategies, and innovative energy infrastructure that support national and global climate objectives.
+        </p>
+        <p>
+          Established with the vision of becoming Sri Lanka's leading hydrogen solutions provider, H2 Lanka serves as a strategic platform connecting government institutions, industry, investors, academia, and international technology partners to foster innovation and investment in the clean energy sector.
+        </p>
+        <p>
+          As Sri Lanka advances towards carbon neutrality and energy independence, H2 Lanka is committed to delivering world-class technical expertise, project development, research, policy support, and investment facilitation across the hydrogen value chain.
+        </p>
+      </motion.div>
 
       {/* 4 Metric / Impact Cards */}
       <motion.div
