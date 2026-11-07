@@ -24,9 +24,15 @@ export const footerSolutions: FooterSection = {
 
 export const footerContact = {
   title: 'Contact',
-  address: 'Colombo, Sri Lanka',
+  address: [
+    'H2 Lanka (Pvt) Ltd,',
+    '# 586/46',
+    'Ranmuthugala,',
+    'Kadawatha (WP) 11850,',
+    'Sri Lanka',
+  ],
   email: 'info@h2lanka.lk',
-  phone: '+94 (11) 234-5678',
+  phone: '+94 76 557 7073',
   hours: 'Mon – Fri: 8:30 AM – 5:30 PM (SLST)',
   registration: 'H2 Lanka (Pvt) Ltd • Reg. No: PV-00289140',
 };
@@ -40,4 +46,3 @@ export const footerLegalLinks: FooterLink[] = [
   { label: 'Privacy Policy', href: '#privacy' },
   { label: 'Terms of Service', href: '#terms' },
 ];
-
