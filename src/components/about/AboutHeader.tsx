@@ -13,7 +13,19 @@ export const AboutHeader: React.FC = () => {
 
   return (
     <div className="relative max-w-5xl mx-auto text-center space-y-6 sm:space-y-8">
-      
+      {/* Header Title */}
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#062A56] tracking-tight leading-tight"
+      >
+        About{' '}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10B981] via-[#059669] to-[#00B4D8]">
+          H2 Lanka
+        </span>
+      </motion.h2>
 
       {/* Narrative Lead Paragraph */}
       <motion.div
