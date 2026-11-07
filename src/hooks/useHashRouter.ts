@@ -1,11 +1,12 @@
 import { useState, useEffect, useCallback } from 'react';
+import { scrollToFooterContact } from '../utils/scrollToFooterContact';
 
 export type RouteKey = 'home' | 'about' | 'our-focus' | 'partners';
 
 export function parseHashRoute(hashString: string): { route: RouteKey; scrollToContact: boolean } {
   const cleanHash = (hashString || '').replace(/^#\/?/, '').trim().toLowerCase();
 
-  if (cleanHash === 'contact') {
+  if (cleanHash === 'contact' || cleanHash === 'footer-contact') {
     return { route: 'home', scrollToContact: true };
   }
 
@@ -25,6 +26,22 @@ export function parseHashRoute(hashString: string): { route: RouteKey; scrollToC
   return { route: 'home', scrollToContact: false };
 }
 
+function getSectionId(route: RouteKey, scrollToContact: boolean): string {
+  if (scrollToContact) return document.getElementById('footer-contact') ? 'footer-contact' : 'contact';
+
+  switch (route) {
+    case 'about':
+      return 'about-us';
+    case 'our-focus':
+      return 'our-focus';
+    case 'partners':
+      return 'partners';
+    case 'home':
+    default:
+      return 'home';
+  }
+}
+
 export function useHashRouter() {
   const [routeState, setRouteState] = useState<{ route: RouteKey; scrollToContact: boolean }>(() => {
     if (typeof window !== 'undefined') {
@@ -35,17 +52,18 @@ export function useHashRouter() {
 
   const navigate = useCallback((target: string) => {
     if (typeof window === 'undefined') return;
+    if (target === '#footer-contact' || target === '#/contact') {
+      scrollToFooterContact({ updateHash: true });
+      return;
+    }
     const formatted = target.startsWith('#') ? target : `#/${target.replace(/^\//, '')}`;
     if (window.location.hash === formatted) {
-      // Re-trigger scroll if already on the same route
       const parsed = parseHashRoute(formatted);
       if (parsed.scrollToContact) {
-        const contactEl = document.getElementById('contact');
-        if (contactEl) {
-          contactEl.scrollIntoView({ behavior: 'smooth' });
-        }
+        scrollToFooterContact({ updateHash: true });
       } else {
-        window.scrollTo({ top: 0, behavior: 'instant' });
+        const section = document.getElementById(getSectionId(parsed.route, parsed.scrollToContact));
+        section?.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
       window.location.hash = formatted;
@@ -53,37 +71,31 @@ export function useHashRouter() {
   }, []);
 
   useEffect(() => {
+    const scrollToCurrentSection = (behavior: ScrollBehavior = 'smooth') => {
+      const parsed = parseHashRoute(window.location.hash);
+      if (parsed.scrollToContact) {
+        scrollToFooterContact();
+        return;
+      }
+      const section = document.getElementById(getSectionId(parsed.route, parsed.scrollToContact));
+      section?.scrollIntoView({ behavior });
+    };
+
     const handleHashChange = () => {
       const parsed = parseHashRoute(window.location.hash);
       setRouteState(parsed);
 
-      if (parsed.scrollToContact) {
-        setTimeout(() => {
-          const contactEl = document.getElementById('contact');
-          if (contactEl) {
-            contactEl.scrollIntoView({ behavior: 'smooth' });
-          }
-        }, 80);
-      } else {
-        window.scrollTo({ top: 0, behavior: 'instant' });
-      }
+      requestAnimationFrame(() => scrollToCurrentSection());
     };
 
     window.addEventListener('hashchange', handleHashChange);
-    // Check on initial mount if contact needs scrolling
-    if (routeState.scrollToContact) {
-      setTimeout(() => {
-        const contactEl = document.getElementById('contact');
-        if (contactEl) {
-          contactEl.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 150);
-    }
+    const initialScroll = window.setTimeout(() => scrollToCurrentSection('instant'), 0);
 
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
+      window.clearTimeout(initialScroll);
     };
-  }, [routeState.scrollToContact]);
+  }, []);
 
   return {
     currentRoute: routeState.route,
