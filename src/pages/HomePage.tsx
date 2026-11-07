@@ -27,7 +27,7 @@ export const HomePage: React.FC = () => {
       <NationalEconomyVision />
 
       {/* 3. Strategic Gateway Portals to Inner Pages */}
-      <StrategicGateways />
+      {/* <StrategicGateways /> */}
 
       {/* Main navigation destinations are sections on this page. */}
       <About />
