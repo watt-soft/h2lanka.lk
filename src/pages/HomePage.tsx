@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import Hero from '../components/hero/Hero';
 import NationalEconomyVision from '../components/home/NationalEconomyVision';
 import StrategicGateways from '../components/home/StrategicGateways';
-import HomeContact from '../components/home/HomeContact';
 import About from '../components/about/About';
 import OurFocus from '../components/focus/OurFocus';
 import PartnersPage from './PartnersPage';
@@ -34,9 +33,6 @@ export const HomePage: React.FC = () => {
       <About />
       <OurFocus />
       <PartnersPage />
-
-      {/* 4. Contact & Corporate Inquiries Section (Kept on Home Page as requested) */}
-      <HomeContact />
     </motion.div>
   );
 };
