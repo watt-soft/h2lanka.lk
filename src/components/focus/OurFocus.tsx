@@ -14,7 +14,7 @@ export const OurFocus: React.FC = () => {
   return (
     <section
       id="our-focus"
-      className="relative py-20 sm:py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-white via-slate-50/80 to-white border-t border-slate-100"
+      className="relative scroll-mt-20 sm:scroll-mt-24 py-20 sm:py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-white via-slate-50/80 to-white border-t border-slate-100"
       aria-label="Our Focus"
     >
       {/* Subtle Hydrogen Micro-Particle Atmosphere (Viewport-pinned for 60 FPS performance) */}
