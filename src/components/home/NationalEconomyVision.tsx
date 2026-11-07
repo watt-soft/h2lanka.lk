@@ -7,7 +7,7 @@ export const NationalEconomyVision: React.FC = () => {
   return (
     <section
       id="national-economy-vision"
-      className="relative py-12 sm:py-16 lg:py-20 overflow-hidden bg-gradient-to-b from-sky-50/40 via-white to-slate-50/60 border-t border-slate-100/90"
+      className="relative py-10 sm:py-10 lg:py-10 overflow-hidden bg-gradient-to-b from-sky-50/40 via-white to-slate-50/60 border-t border-slate-100/90"
       aria-label="Building Sri Lanka's Green Hydrogen Economy"
     >
       {/* Atmospheric Soft Cyan & Emerald Ambient Glows */}
@@ -61,6 +61,23 @@ export const NationalEconomyVision: React.FC = () => {
             </p>
           </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.6 }}
+          className="mt-10 sm:mt-14 lg:mt-16"
+        >
+          <img
+            src={getAssetPath('/hydrogen-value-chain.png')}
+            alt="Key application areas of the hydrogen value chain: transport, industry, power generation, and export market"
+            className="mx-auto h-auto w-full max-w-6xl"
+            width={1664}
+            height={768}
+            loading="lazy"
+          />
+        </motion.div>
       </Container>
     </section>
   );
