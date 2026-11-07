@@ -81,6 +81,34 @@ export function useHashRouter() {
       section?.scrollIntoView({ behavior });
     };
 
+    const getActiveRouteFromScroll = (): RouteKey => {
+      const sectionOrder: Array<{ route: RouteKey; id: string }> = [
+        { route: 'home', id: 'home' },
+        { route: 'about', id: 'about-us' },
+        { route: 'our-focus', id: 'our-focus' },
+        { route: 'partners', id: 'partners' },
+      ];
+
+      const scrollPosition = window.scrollY + 180;
+      let activeRoute: RouteKey = 'home';
+      let closestDistance = Number.POSITIVE_INFINITY;
+
+      sectionOrder.forEach(({ route, id }) => {
+        const section = document.getElementById(id);
+        if (!section) return;
+
+        const sectionTop = section.offsetTop;
+        const distance = Math.abs(sectionTop - scrollPosition);
+
+        if (sectionTop <= scrollPosition && distance < closestDistance) {
+          activeRoute = route;
+          closestDistance = distance;
+        }
+      });
+
+      return activeRoute;
+    };
+
     const handleHashChange = () => {
       const parsed = parseHashRoute(window.location.hash);
       setRouteState(parsed);
@@ -88,11 +116,27 @@ export function useHashRouter() {
       requestAnimationFrame(() => scrollToCurrentSection());
     };
 
+    const handleScroll = () => {
+      const activeRoute = getActiveRouteFromScroll();
+      setRouteState((current) => {
+        if (current.route === activeRoute && !current.scrollToContact) {
+          return current;
+        }
+
+        return { route: activeRoute, scrollToContact: false };
+      });
+    };
+
     window.addEventListener('hashchange', handleHashChange);
-    const initialScroll = window.setTimeout(() => scrollToCurrentSection('instant'), 0);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    const initialScroll = window.setTimeout(() => {
+      handleScroll();
+      scrollToCurrentSection('instant');
+    }, 0);
 
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener('scroll', handleScroll);
       window.clearTimeout(initialScroll);
     };
   }, []);
