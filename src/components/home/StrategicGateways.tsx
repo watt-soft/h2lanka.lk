@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Compass, Zap, Handshake, Sparkles } from 'lucide-react';
 import Container from '../layout/Container';
 import Button from '../common/Button';
-import { prefetchRoute } from '../../utils/prefetchRoutes';
 
 interface GatewayCardData {
   id: string;
@@ -97,7 +96,6 @@ export const StrategicGateways: React.FC = () => {
                 viewport={{ once: true, margin: '-20px' }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -6 }}
-                onMouseEnter={() => prefetchRoute(card.href)}
                 className={`group relative rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 shadow-lg hover:shadow-2xl overflow-hidden border ${
                   isDarkNavy
                     ? 'bg-gradient-to-br from-[#062A56] via-[#083870] to-[#041E40] text-white border-slate-700/60'
