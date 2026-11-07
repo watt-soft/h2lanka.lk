@@ -6,8 +6,8 @@ export const footerNavigation: FooterSection = {
     { label: 'Home', href: '#/' },
     { label: 'About Us', href: '#/about' },
     { label: 'Our Focus', href: '#/our-focus' },
-    { label: 'Strategic Partners', href: '#/partners' },
-    { label: 'Contact Us', href: '#footer-contact' },
+    { label: 'Partners', href: '#/partners' },
+
   ],
 };
 
@@ -23,7 +23,7 @@ export const footerSolutions: FooterSection = {
 };
 
 export const footerContact = {
-  title: 'Headquarters & Inquiries',
+  title: 'Contact',
   address: 'Colombo, Sri Lanka',
   email: 'info@h2lanka.lk',
   phone: '+94 (11) 234-5678',
@@ -33,14 +33,11 @@ export const footerContact = {
 
 export const footerSocials: SocialLink[] = [
   { platform: 'linkedin', href: 'https://linkedin.com', ariaLabel: 'H2 Lanka on LinkedIn' },
-  { platform: 'twitter', href: 'https://twitter.com', ariaLabel: 'H2 Lanka on X / Twitter' },
-  { platform: 'youtube', href: 'https://youtube.com', ariaLabel: 'H2 Lanka on YouTube' },
   { platform: 'mail', href: 'mailto:info@h2lanka.lk', ariaLabel: 'Send an email to H2 Lanka' },
 ];
 
 export const footerLegalLinks: FooterLink[] = [
   { label: 'Privacy Policy', href: '#privacy' },
   { label: 'Terms of Service', href: '#terms' },
-  { label: 'Environmental & Carbon Compliance', href: '#compliance' },
 ];
 
