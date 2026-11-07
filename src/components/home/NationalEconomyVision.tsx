@@ -48,16 +48,16 @@ export const NationalEconomyVision: React.FC = () => {
             className="lg:col-span-6 space-y-3 sm:space-y-4 text-center lg:text-left max-w-2xl mx-auto lg:mx-0"
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-extrabold text-[#062A56] tracking-tight leading-[1.2]">
-              Building Sri Lanka’s{' '}
+              Advancing Sri Lanka’s{' '}
               <span className="text-[#10B981]">Green Hydrogen</span>{' '}
-              Economy
+              Vision
             </h2>
 
             {/* Solid Horizontal Accent Line */}
             <div className="w-14 sm:w-16 h-1 sm:h-1.5 bg-[#094792] rounded-full mx-auto lg:mx-0 my-3 sm:my-4" />
 
             <p className="text-slate-700 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed font-normal">
-              H2 Lanka (Pvt) Ltd is a pioneering clean energy company dedicated to developing green hydrogen solutions across Sri Lanka and beyond.
+              H2 Lanka (Pvt) Ltd is a pioneering clean energy company dedicated to developing green hydrogen techno economic solutions across Sri Lanka and beyond.
             </p>
           </motion.div>
         </div>
