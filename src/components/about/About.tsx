@@ -4,17 +4,17 @@ import HydrogenBackground from '../common/HydrogenBackground';
 import AboutHeader from './AboutHeader';
 import VisionMissionCards from './VisionMissionCards';
 import ValueChainGrid from './ValueChainGrid';
-import StrategicPillars from './StrategicPillars';
-import ExecutionPipeline from './ExecutionPipeline';
-import CommitmentsGrid from './CommitmentsGrid';
+// import StrategicPillars from './StrategicPillars';
+// import ExecutionPipeline from './ExecutionPipeline';
+// import CommitmentsGrid from './CommitmentsGrid';
 import LeadershipSection from './LeadershipSection';
-import AboutCTA from './AboutCTA';
+// import AboutCTA from './AboutCTA';
 
 export const About: React.FC = () => {
   return (
     <section
       id="about-us"
-      className="relative scroll-mt-20 sm:scroll-mt-24 py-20 sm:py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-white via-slate-50/70 to-white border-t border-slate-100"
+      className="relative py-10 sm:py-10 lg:py-10 overflow-hidden bg-gradient-to-b from-white via-slate-50/70 to-white border-t border-slate-100"
       aria-label="About H2 Lanka"
     >
       {/* Subtle Hydrogen Micro-Particle Atmosphere (Viewport-pinned for 60 FPS performance) */}
@@ -42,19 +42,19 @@ export const About: React.FC = () => {
         <ValueChainGrid />
 
         {/* 4. Strategic Foundations: Research, Global Alliances, Sri Lanka Focus */}
-        <StrategicPillars />
+        {/* <StrategicPillars /> */}
 
         {/* 5. Execution Pathway: 5-Stage Progressive Roadmap */}
-        <ExecutionPipeline />
+        {/* <ExecutionPipeline /> */}
 
         {/* 6. Core Values: Enduring Commitments */}
-        <CommitmentsGrid />
+        {/* <CommitmentsGrid /> */}
 
         {/* 7. Leadership & Strategic Advisory */}
         <LeadershipSection />
 
         {/* 8. Action Banner: Powering the Future */}
-        <AboutCTA />
+        {/* <AboutCTA /> */}
       </Container>
     </section>
   );
