@@ -5,6 +5,7 @@ import Container from './Container';
 import Logo from '../common/Logo';
 import Button from '../common/Button';
 import HydrogenBackground from '../common/HydrogenBackground';
+import { scrollToFooterContact } from '../../utils/scrollToFooterContact';
 import {
   footerNavigation,
   footerSolutions,
@@ -56,7 +57,11 @@ export const Footer: React.FC = () => {
               <Button
                 variant="gradient"
                 size="md"
-                href="#/contact"
+                href="#footer-contact"
+                onClick={(e) => {
+                  e?.preventDefault();
+                  scrollToFooterContact({ updateHash: true });
+                }}
                 fullWidth="mobile"
                 showArrow
               >
@@ -142,6 +147,12 @@ export const Footer: React.FC = () => {
                 <li key={link.label}>
                   <a
                     href={link.href}
+                    onClick={(e) => {
+                      if (link.href === '#footer-contact' || link.href === '#/contact') {
+                        e.preventDefault();
+                        scrollToFooterContact({ updateHash: true });
+                      }
+                    }}
                     className="text-slate-400 hover:text-cyan-400 text-sm font-medium transition-colors duration-200 inline-flex items-center gap-1.5 group"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-slate-700 group-hover:bg-cyan-400 transition-colors" />
@@ -173,7 +184,10 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Column 4: Contact & Headquarters */}
-          <div className="space-y-4">
+          <div
+            id="footer-contact"
+            className="space-y-4 scroll-mt-28 p-4 -m-4 rounded-2xl transition-all duration-500"
+          >
             <h3 className="text-sm font-bold tracking-wider uppercase text-white">
               {footerContact.title}
             </h3>
