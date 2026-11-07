@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import {
   Globe,
@@ -14,10 +14,6 @@ import Button from '../components/common/Button';
 import HydrogenBackground from '../components/common/HydrogenBackground';
 
 export const PartnersPage: React.FC = () => {
-  useEffect(() => {
-    document.title = 'Strategic Partners | H2 Lanka (Pvt) Ltd';
-  }, []);
-
   const partnerPillars = [
     {
       id: 'korean-alliance',
@@ -79,7 +75,7 @@ export const PartnersPage: React.FC = () => {
     >
       <section
         id="partners"
-        className="relative py-20 sm:py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-white via-slate-50/80 to-white"
+        className="relative scroll-mt-20 sm:scroll-mt-24 py-20 sm:py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-white via-slate-50/80 to-white"
         aria-label="Strategic Partners"
       >
         {/* Subtle Hydrogen Micro-Particle Atmosphere (Viewport-pinned for 60 FPS performance) */}
