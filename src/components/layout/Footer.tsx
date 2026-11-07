@@ -1,9 +1,7 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { MapPin, Mail, Phone, ArrowUp, ShieldCheck, Clock } from 'lucide-react';
 import Container from './Container';
 import Logo from '../common/Logo';
-import HydrogenBackground from '../common/HydrogenBackground';
 import { scrollToFooterContact } from '../../utils/scrollToFooterContact';
 import {
   footerNavigation,
@@ -20,31 +18,19 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-[#030F22] text-white overflow-hidden border-t border-slate-800/80 pt-16 sm:pt-20 pb-12 select-none">
-      {/* Subtle Hydrogen Micro-Particle Atmosphere */}
-      <div className="absolute inset-0 pointer-events-none opacity-80">
-        <HydrogenBackground variant="minimal" speedMultiplier={0.7} particleDensity={18} />
-      </div>
-
-      {/* Atmospheric Cyan and Emerald Radial Glow Blobs */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-cyan-500/15 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[450px] h-[450px] rounded-full bg-emerald-500/15 blur-3xl pointer-events-none" />
-
-      <Container size="xl" className="relative z-10">
-
-        {/* ================================================================= */}
-        {/* 2. FOUR-COLUMN MAIN CONTENT GRID                                  */}
-        {/* ================================================================= */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12 pb-14 border-b border-slate-800/80">
-          {/* Column 1: Brand & Mission (Wide 2-column span on large screens) */}
-          <div className="lg:col-span-2 space-y-6">
-            <a href="#/" className="inline-block focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-lg" aria-label="H2 Lanka Home">
+    <footer className="bg-[#041E40] text-white border-t border-slate-700">
+      <Container size="xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1fr] gap-9 sm:gap-10 lg:gap-16 py-10 sm:py-12">
+          <div className="space-y-5">
+            <a
+              href="#/"
+              className="inline-block rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400"
+              aria-label="H2 Lanka Home"
+            >
               <Logo layout="horizontal" size="md" theme="dark" />
             </a>
 
-
-            {/* Social Links */}
-            <div className="pt-2 flex items-center gap-3">
+            <div className="flex items-center gap-3">
               {footerSocials.map((social) => (
                 <a
                   key={social.platform}
@@ -52,7 +38,7 @@ export const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.ariaLabel}
-                  className="w-10 h-10 rounded-xl bg-slate-800/80 hover:bg-cyan-500/20 border border-slate-700/80 hover:border-cyan-400/50 flex items-center justify-center text-slate-300 hover:text-cyan-400 transition-all duration-200 group shadow-sm"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-600 bg-slate-800 text-slate-200 transition-colors hover:border-cyan-400 hover:text-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                 >
                   {social.platform === 'linkedin' && (
                     <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -65,12 +51,11 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 2: Quick Navigation */}
-          <div className="space-y-4">
-            <h3 className="text-sm font-bold tracking-wider uppercase text-white">
+          <nav aria-label="Footer navigation" className="space-y-4">
+            <h2 className="text-sm font-bold text-white">
               {footerNavigation.title}
-            </h3>
-            <ul className="space-y-2.5">
+            </h2>
+            <ul className="space-y-3">
               {footerNavigation.links.map((link) => (
                 <li key={link.label}>
                   <a
@@ -81,90 +66,85 @@ export const Footer: React.FC = () => {
                         scrollToFooterContact({ updateHash: true });
                       }
                     }}
-                    className="text-slate-400 hover:text-cyan-400 text-sm font-medium transition-colors duration-200 inline-flex items-center gap-1.5 group"
+                    className="inline-flex min-h-6 items-center text-sm text-slate-300 transition-colors hover:text-cyan-300 focus:outline-none focus:text-cyan-300"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate-700 group-hover:bg-cyan-400 transition-colors" />
                     {link.label}
                   </a>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
-          {/* Column 3: Hydrogen Focus Areas */}
-
-          {/* Column 4: Contact & Headquarters */}
           <div
             id="footer-contact"
-            className="space-y-4 scroll-mt-28 p-4 -m-4 rounded-2xl transition-all duration-500"
+            className="space-y-4 scroll-mt-28"
           >
-            <h3 className="text-sm font-bold tracking-wider uppercase text-white">
+            <h2 className="text-sm font-bold text-white">
               {footerContact.title}
-            </h3>
-            <div className="space-y-3 text-sm text-slate-300">
-              <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                <span>{footerContact.address}</span>
+            </h2>
+            <address className="space-y-3 not-italic text-sm text-slate-300">
+              <div className="flex items-start gap-3">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-cyan-300" />
+                <span>
+                  {footerContact.address.map((line, index) => (
+                    <React.Fragment key={line}>
+                      {line}
+                      {index < footerContact.address.length - 1 && <br />}
+                    </React.Fragment>
+                  ))}
+                </span>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-cyan-400 shrink-0" />
-                <a href={`mailto:${footerContact.email}`} className="hover:text-cyan-400 transition-colors">
+              <div className="flex items-start gap-3">
+                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-cyan-300" />
+                <a href={`mailto:${footerContact.email}`} className="break-all transition-colors hover:text-cyan-300">
                   {footerContact.email}
                 </a>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-cyan-400 shrink-0" />
-                <a href={`tel:${footerContact.phone.replace(/[^0-9+]/g, '')}`} className="hover:text-cyan-400 transition-colors">
+              <div className="flex items-start gap-3">
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-cyan-300" />
+                <a href={`tel:${footerContact.phone.replace(/[^0-9+]/g, '')}`} className="transition-colors hover:text-cyan-300">
                   {footerContact.phone}
                 </a>
               </div>
-              <div className="flex items-start gap-2.5 pt-1 text-xs text-slate-400">
-                <Clock className="w-3.5 h-3.5 text-slate-500 shrink-0 mt-0.5" />
+              <div className="flex items-start gap-3 pt-1 text-xs text-slate-400">
+                <Clock className="mt-0.5 h-3.5 w-3.5 shrink-0 text-slate-400" />
                 <span>{footerContact.hours}</span>
               </div>
-              <div className="pt-2">
-                <span className="inline-flex items-center gap-1.5 text-xs text-slate-400 font-medium">
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>{footerContact.registration}</span>
-                </span>
+              <div className="flex items-start gap-3 pt-1 text-xs text-slate-400">
+                <ShieldCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-emerald-300" />
+                <span>{footerContact.registration}</span>
               </div>
-            </div>
+            </address>
           </div>
         </div>
 
-        {/* ================================================================= */}
-        {/* 3. BOTTOM LEGAL & COPYRIGHT BAR                                   */}
-        {/* ================================================================= */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <div>
+        <div className="flex flex-col gap-4 border-t border-slate-700 py-5 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-center sm:text-left">
             © {currentYear} H2 Lanka (Pvt) Ltd. All rights reserved. Powering Sri Lanka’s Hydrogen Future.
-          </div>
+          </p>
 
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-5 sm:justify-end">
             <div className="flex items-center gap-4">
               {footerLegalLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="hover:text-slate-200 transition-colors duration-200"
+                  className="transition-colors hover:text-white focus:outline-none focus:text-white"
                 >
                   {link.label}
                 </a>
               ))}
             </div>
 
-            {/* Back to Top Smooth Button */}
-            <motion.button
+            <button
               type="button"
               onClick={scrollToTop}
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.95 }}
               aria-label="Scroll back to top of page"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 text-slate-300 hover:text-white transition-colors"
+              className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-slate-600 bg-slate-800 px-3 py-2 text-slate-200 transition-colors hover:border-cyan-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
             >
-              <span>Top</span>
-              <ArrowUp className="w-3.5 h-3.5 text-cyan-400" />
-            </motion.button>
+              <span>Back to top</span>
+              <ArrowUp className="h-4 w-4 text-cyan-300" />
+            </button>
           </div>
         </div>
       </Container>
