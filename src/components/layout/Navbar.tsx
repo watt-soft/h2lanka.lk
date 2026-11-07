@@ -7,7 +7,7 @@ import Button from '../common/Button';
 import Container from './Container';
 import MobileNav from './MobileNav';
 import { cn } from '../../utils/cn';
-import { prefetchRoute } from '../../utils/prefetchRoutes';
+import { scrollToFooterContact } from '../../utils/scrollToFooterContact';
 import type { RouteKey } from '../../hooks/useHashRouter';
 
 export interface NavbarProps {
@@ -75,7 +75,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                   key={item.name}
                   href={item.href}
                   onClick={() => onNavigate?.(item.href)}
-                  onMouseEnter={() => prefetchRoute(item.href)}
                   className={cn(
                     'relative text-sm xl:text-base font-semibold transition-colors duration-200 py-1',
                     isActive
@@ -101,8 +100,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             <Button
               variant="primary"
               size="sm"
-              href="#/contact"
-              onClick={() => onNavigate?.('#/contact')}
+              href="#footer-contact"
+              onClick={(e) => {
+                e?.preventDefault();
+                scrollToFooterContact({ updateHash: true });
+              }}
             >
               Get in Touch
             </Button>
@@ -110,6 +112,18 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Mobile Hamburger Toggle Button */}
           <div className="lg:hidden flex items-center">
+            <Button
+              variant="primary"
+              size="xs"
+              href="#footer-contact"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToFooterContact({ updateHash: true });
+              }}
+              className="mr-2"
+            >
+              Get in Touch
+            </Button>
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
