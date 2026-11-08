@@ -16,10 +16,10 @@ import { getAssetPath } from '../utils/assetPath';
 
 export const PartnersPage: React.FC = () => {
   const partnerLogos = [
-    { name: 'G Philos', image: '/partners/g-philos.jpg' },
+    { name: 'G Philos', image: '/partners/g-philos.png' },
     { name: 'H2 Korea', image: '/partners/h2-korea.png' },
     { name: 'KOGAS', image: '/partners/kogas.png' },
-    { name: 'ICBT Campus', image: '/partners/icbt.jpg' },
+    { name: 'ICBT Campus', image: '/partners/icbt.png' },
     { name: 'Hydrogen New Zealand', image: '/partners/hydrogen-new-zealand.webp' },
     { name: 'INSEE', image: '/partners/insee.png' },
     { name: 'University of Vavuniya', image: '/partners/university-of-vavuniya.png' },
