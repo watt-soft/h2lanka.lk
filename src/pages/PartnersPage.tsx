@@ -9,10 +9,11 @@ export const PartnersPage: React.FC = () => {
     { name: 'G Philos', image: '/partners/g-philos.png' },
     { name: 'H2 Korea', image: '/partners/h2-korea.png' },
     { name: 'KOGAS', image: '/partners/kogas.png' },
+    { name: 'University of Vavuniya', image: '/partners/university-of-vavuniya.png' },
     { name: 'ICBT Campus', image: '/partners/icbt.png' },
     { name: 'Hydrogen New Zealand', image: '/partners/hydrogen-new-zealand.webp' },
     { name: 'INSEE', image: '/partners/insee.png' },
-    { name: 'University of Vavuniya', image: '/partners/university-of-vavuniya.png' },
+
   ];
 
   return (
@@ -62,14 +63,14 @@ export const PartnersPage: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-30px' }}
             transition={{ duration: 0.5 }}
-            className="w-full overflow-x-auto pb-2"
+            className="w-full"
             aria-label="Partner organizations"
           >
-            <div className="flex min-w-max items-center justify-center gap-4 sm:gap-6">
+            <div className="flex w-full flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-6">
               {partnerLogos.map((partner) => (
                 <div
                   key={partner.name}
-                  className="flex h-24 w-36 sm:h-28 sm:w-40 shrink-0 items-center justify-center rounded-2xl border border-slate-200/80 bg-white/90 p-4 shadow-sm"
+                  className="flex h-24 w-full max-w-[280px] items-center justify-center rounded-2xl border border-slate-200/80 bg-white/90 p-4 shadow-sm sm:h-28 sm:w-40"
                 >
                   <img
                     src={getAssetPath(partner.image)}
