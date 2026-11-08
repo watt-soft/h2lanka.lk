@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Hero from '../components/hero/Hero';
 import NationalEconomyVision from '../components/home/NationalEconomyVision';
-import StrategicGateways from '../components/home/StrategicGateways';
 import About from '../components/about/About';
 import OurFocus from '../components/focus/OurFocus';
 import PartnersPage from './PartnersPage';
