@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion, type Variants } from 'framer-motion';
-import Button from '../common/Button';
 import Logo from '../common/Logo';
 
 export const HeroContent: React.FC = () => {
@@ -57,37 +56,11 @@ export const HeroContent: React.FC = () => {
         variants={itemVariants}
         className="mt-6 text-base sm:text-lg lg:text-xl text-slate-800 font-medium leading-relaxed max-w-lg"
       >
-        Accelerating the transition to a clean, secure and sustainable energy economy
+        Driving decarbonization and building a sustainable energy economy
       </motion.p>
 
-      {/* Action Buttons */}
-      <motion.div
-        variants={itemVariants}
-        className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-5 w-full sm:w-auto"
-      >
-        <Button
-          variant="primary"
-          size="md"
-          href="#/about"
-          showArrow
-          fullWidth="mobile"
-        >
-          About Us
-        </Button>
-
-        <Button
-          variant="secondary"
-          size="md"
-          href="#/our-focus"
-          showArrow
-          fullWidth="mobile"
-        >
-          Our Focus
-        </Button>
-      </motion.div>
     </motion.div>
   );
 };
 
 export default HeroContent;
-

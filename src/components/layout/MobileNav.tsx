@@ -1,15 +1,12 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { NavItem } from '../../types';
-import Button from '../common/Button';
-import { prefetchRoute } from '../../utils/prefetchRoutes';
 
 interface MobileNavProps {
   isOpen: boolean;
   navItems: NavItem[];
   currentRoute?: string;
   onClose: () => void;
-  onContactClick?: () => void;
   onSelectSection?: (href: string) => void;
 }
 
@@ -18,7 +15,6 @@ export const MobileNav: React.FC<MobileNavProps> = ({
   navItems,
   currentRoute = 'home',
   onClose,
-  onContactClick,
   onSelectSection,
 }) => {
   const handleItemClick = (href: string) => {
@@ -45,8 +41,6 @@ export const MobileNav: React.FC<MobileNavProps> = ({
                     key={item.name}
                     href={item.href}
                     onClick={() => handleItemClick(item.href)}
-                    onTouchStart={() => prefetchRoute(item.href)}
-                    onMouseEnter={() => prefetchRoute(item.href)}
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.05 }}
@@ -67,23 +61,6 @@ export const MobileNav: React.FC<MobileNavProps> = ({
                 );
               })}
             </nav>
-
-            <div className="pt-2">
-              <Button
-                variant="gradient"
-                size="md"
-                href="#/contact"
-                fullWidth
-                showArrow
-                onClick={() => {
-                  onSelectSection?.('#/contact');
-                  onClose();
-                  onContactClick?.();
-                }}
-              >
-                Get in Touch
-              </Button>
-            </div>
           </div>
         </motion.div>
       )}

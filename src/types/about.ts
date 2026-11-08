@@ -7,6 +7,17 @@ export interface AboutMetricItem {
 
 export type ValueChainCategory = 'all' | 'production' | 'applications' | 'consultancy';
 
+export interface ExpertiseItem {
+  id: string;
+  number: string;
+  title: string;
+  iconName: string;
+  iconColor: string;
+  iconBg: string;
+  hoverBg: string;
+  accentGradient: string;
+}
+
 export interface ValueChainItem {
   id: string;
   title: string;

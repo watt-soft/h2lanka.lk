@@ -3,7 +3,9 @@ import { motion } from 'framer-motion';
 import Hero from '../components/hero/Hero';
 import NationalEconomyVision from '../components/home/NationalEconomyVision';
 import StrategicGateways from '../components/home/StrategicGateways';
-import HomeContact from '../components/home/HomeContact';
+import About from '../components/about/About';
+import OurFocus from '../components/focus/OurFocus';
+import PartnersPage from './PartnersPage';
 
 export const HomePage: React.FC = () => {
   useEffect(() => {
@@ -16,7 +18,7 @@ export const HomePage: React.FC = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="w-full max-w-full overflow-x-clip space-y-16 sm:space-y-24"
+      className="w-full max-w-full overflow-x-clip"
     >
       {/* 1. Hero Section with 3D Headline, Landscape Visual, and Value Pillars */}
       <Hero />
@@ -25,10 +27,12 @@ export const HomePage: React.FC = () => {
       <NationalEconomyVision />
 
       {/* 3. Strategic Gateway Portals to Inner Pages */}
-      <StrategicGateways />
+      {/* <StrategicGateways /> */}
 
-      {/* 4. Contact & Corporate Inquiries Section (Kept on Home Page as requested) */}
-      <HomeContact />
+      {/* Main navigation destinations are sections on this page. */}
+      <About />
+      <OurFocus />
+      <PartnersPage />
     </motion.div>
   );
 };

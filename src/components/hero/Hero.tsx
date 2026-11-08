@@ -37,7 +37,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Desktop Value Pillars: Slim, compact ribbon moved lower down so imagery is visible */}
-        <div className="hidden md:block w-full md:translate-y-6 lg:translate-y-8">
+        <div className="hidden md:block w-full md:translate-y-3 lg:translate-y-3">
           <ValuePillars />
         </div>
       </section>

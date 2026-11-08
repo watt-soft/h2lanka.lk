@@ -46,7 +46,7 @@ export const FocusHeader: React.FC<FocusHeaderProps> = ({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-extrabold text-[#062A56] tracking-tight leading-[1.12]"
+        className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#062A56] tracking-tight leading-tight"
       >
         Accelerating Clean{' '}
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00B4D8] via-[#0284C7] to-[#10B981]">
