@@ -11,7 +11,8 @@ export function scrollToFooterContact(options?: { updateHash?: boolean }) {
       'ring-cyan-400/70',
       'bg-cyan-500/10',
       'shadow-lg',
-      'shadow-cyan-500/20'
+      'shadow-cyan-500/20',
+      'rounded-2xl'
     );
     setTimeout(() => {
       target.classList.remove(
@@ -19,7 +20,8 @@ export function scrollToFooterContact(options?: { updateHash?: boolean }) {
         'ring-cyan-400/70',
         'bg-cyan-500/10',
         'shadow-lg',
-        'shadow-cyan-500/20'
+        'shadow-cyan-500/20',
+        'rounded-2xl'
       );
     }, 2200);
 
