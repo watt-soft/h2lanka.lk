@@ -1,14 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Shield, Compass, Globe2 } from 'lucide-react';
-import { aboutMetricsData } from '../../data/about';
+import {
+  ArrowRight,
+  Factory,
+  FlaskConical,
+  Lightbulb,
+  Presentation,
+  TrendingUp,
+} from 'lucide-react';
 
 export const AboutHeader: React.FC = () => {
-  const metricIcons = [
-    <Sparkles key="1" className="w-5 h-5 text-emerald-600" />,
-    <Compass key="2" className="w-5 h-5 text-[#00B4D8]" />,
-    <Globe2 key="3" className="w-5 h-5 text-[#094792]" />,
-    <Shield key="4" className="w-5 h-5 text-emerald-700" />,
+  const philosophyStages = [
+    { title: 'Research', icon: FlaskConical },
+    { title: 'Innovation', icon: Lightbulb },
+    { title: 'Demonstration', icon: Presentation },
+    { title: 'Investment', icon: TrendingUp },
+    { title: 'Commercialization', icon: Factory },
   ];
 
   return (
@@ -46,35 +53,39 @@ export const AboutHeader: React.FC = () => {
         </p>
       </motion.div>
 
-      {/* 4 Metric / Impact Cards */}
       <motion.div
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7, delay: 0.3 }}
-        className="pt-4 sm:pt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 text-left"
+        className="pt-4 sm:pt-6"
       >
-        {aboutMetricsData.map((metric, idx) => (
-          <div
-            key={metric.id}
-            className="group relative p-5 rounded-2xl bg-white/90 backdrop-blur-sm border border-slate-200/90 shadow-sm hover:shadow-md hover:border-cyan-300/80 transition-all duration-300 flex flex-col justify-between"
-          >
-            <div>
-              <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform duration-300">
-                {metricIcons[idx % metricIcons.length]}
+        <h3 className="mb-5 text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#062A56] tracking-tight leading-tight">
+          Our{' '}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00B4D8] via-[#0284C7] to-[#10B981]">
+            Philosophy
+          </span>
+        </h3>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+          {philosophyStages.map(({ title, icon: Icon }, index) => (
+            <div key={title} className="relative">
+              <div className="group flex min-h-32 flex-col items-center justify-center gap-3 rounded-2xl border border-slate-200/90 bg-white/90 p-5 text-center shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-cyan-300/80 hover:shadow-md">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-100 bg-slate-50 text-emerald-600 transition-transform duration-300 group-hover:scale-105">
+                  <Icon className="h-5 w-5" aria-hidden="true" />
+                </div>
+                <span className="text-sm sm:text-base font-bold text-[#062A56]">
+                  {title}
+                </span>
               </div>
-              <div className="text-xl sm:text-2xl font-extrabold text-[#062A56] tracking-tight">
-                {metric.value}
-              </div>
-              <div className="text-xs font-bold uppercase tracking-wider text-emerald-700 mt-0.5">
-                {metric.label}
-              </div>
+              {index < philosophyStages.length - 1 && (
+                <ArrowRight
+                  className="absolute -right-4 top-1/2 z-10 hidden h-4 w-4 -translate-y-1/2 text-emerald-600 lg:block"
+                  aria-hidden="true"
+                />
+              )}
             </div>
-            <p className="text-xs text-slate-600 mt-2.5 leading-relaxed">
-              {metric.description}
-            </p>
-          </div>
-        ))}
+          ))}
+        </div>
       </motion.div>
     </div>
   );
