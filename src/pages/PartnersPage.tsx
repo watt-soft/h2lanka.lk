@@ -1,16 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import {
-  Globe,
-  Handshake,
-  Cpu,
-  GraduationCap,
-  Building2,
-  CheckCircle2,
-  Mail,
-} from 'lucide-react';
 import Container from '../components/layout/Container';
-import Button from '../components/common/Button';
 import HydrogenBackground from '../components/common/HydrogenBackground';
 import { getAssetPath } from '../utils/assetPath';
 
@@ -23,57 +13,6 @@ export const PartnersPage: React.FC = () => {
     { name: 'Hydrogen New Zealand', image: '/partners/hydrogen-new-zealand.webp' },
     { name: 'INSEE', image: '/partners/insee.png' },
     { name: 'University of Vavuniya', image: '/partners/university-of-vavuniya.png' },
-  ];
-
-  const partnerPillars = [
-    {
-      id: 'korean-alliance',
-      title: 'Korean Clean-Tech Alliance',
-      subtitle: 'Advanced Electrolysis & FCEV Tech',
-      description: 'Forging deep strategic alliances with South Korea’s leading hydrogen technology providers, electrolyzer manufacturers, and fuel-cell infrastructure innovators to localize advanced hardware for South Asia.',
-      icon: <Cpu className="w-6 h-6 text-[#00B4D8]" />,
-      highlights: [
-        'Hardware localization and balance-of-plant integration',
-        'Direct partnerships with tier-1 Korean hydrogen EPCs',
-        'High-pressure fueling infrastructure technology transfer',
-      ],
-    },
-    {
-      id: 'climate-finance',
-      title: 'Bilateral & Climate Financing',
-      subtitle: 'Bankable Green Capital',
-      description: 'Collaborating with multilateral climate funds, regional development banks, and institutional clean-energy investors to structure blended finance for utility-scale green hydrogen projects in Sri Lanka.',
-      icon: <Building2 className="w-6 h-6 text-emerald-500" />,
-      highlights: [
-        'Concessional green debt and carbon credit financing',
-        'Risk-sharing frameworks for pioneer demonstration plants',
-        'Comprehensive bankability and techno-economic audits',
-      ],
-    },
-    {
-      id: 'research-universities',
-      title: 'Academic & R&D Consortia',
-      subtitle: 'Knowledge Transfer & Capacity',
-      description: 'Bridging premier Sri Lankan universities and technical research bodies with global clean-energy laboratories to nurture local engineering talent, technical standards, and certified safety operators.',
-      icon: <GraduationCap className="w-6 h-6 text-[#094792]" />,
-      highlights: [
-        'Joint scientific studies on tropical electrolysis efficiency',
-        'Hydrogen safety and technical workforce certification',
-        'Academic exchange programs and localized PhD research',
-      ],
-    },
-    {
-      id: 'industry-offtake',
-      title: 'Industrial Offtake Alliances',
-      subtitle: 'Decarbonizing Heavy Consumers',
-      description: 'Engaging domestic port authorities, textile manufacturers, tea processing clusters, and fertilizer producers under long-term clean hydrogen supply agreements.',
-      icon: <Handshake className="w-6 h-6 text-teal-600" />,
-      highlights: [
-        'Green ammonia bunkering at Colombo & Hambantota ports',
-        'Industrial thermal energy substitution roadmaps',
-        'Cross-sector decarbonization consortium building',
-      ],
-    },
   ];
 
   return (
@@ -143,91 +82,6 @@ export const PartnersPage: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* 4 Partnership Pillars Grid */}
-          {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            {partnerPillars.map((pillar, idx) => (
-              <motion.div
-                key={pillar.id}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-30px' }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="group relative p-7 sm:p-9 rounded-3xl bg-white border border-slate-200/90 hover:border-cyan-400/80 shadow-xs hover:shadow-xl hover:shadow-cyan-500/5 transition-all duration-300 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-xs">
-                    {pillar.icon}
-                  </div>
-
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
-                    {pillar.subtitle}
-                  </span>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#062A56] group-hover:text-[#094792] transition-colors leading-snug">
-                    {pillar.title}
-                  </h3>
-
-                  <p className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    {pillar.description}
-                  </p>
-                </div>
-
-                <div className="mt-6 pt-5 border-t border-slate-100 space-y-2.5">
-                  {pillar.highlights.map((hl) => (
-                    <div key={hl} className="flex items-start gap-2.5 text-xs text-slate-700 leading-normal">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                      <span>{hl}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div> */}
-
-          {/* Callout Action Ribbon */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-40px' }}
-            transition={{ duration: 0.6 }}
-            className="relative rounded-3xl p-8 sm:p-12 lg:p-14 bg-gradient-to-r from-[#062A56] via-[#083870] to-[#041E40] text-white shadow-2xl border border-slate-700/60 overflow-hidden"
-          >
-            <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-              <div className="max-w-2xl space-y-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-400/30 text-xs font-semibold tracking-wide">
-                  <span>INITIATE AN ALLIANCE</span>
-                </div>
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
-                  Interested in Exploring Joint Clean-Tech Opportunities?
-                </h3>
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                  Connect directly with our corporate development and international relations leadership in Colombo to discuss technology transfer, pilot demonstration, or green investment.
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full lg:w-auto shrink-0 pt-2 lg:pt-0">
-                <Button
-                  variant="gradient"
-                  size="md"
-                  href="#/contact"
-                  fullWidth="mobile"
-                  icon={<Mail className="w-4 h-4" />}
-                  mobileText="Contact Alliances"
-                >
-                  Contact Our Alliances Team
-                </Button>
-
-                <Button
-                  variant="glass"
-                  size="md"
-                  href="#/our-focus"
-                  fullWidth="mobile"
-                  showArrow
-                >
-                  Explore Capabilities
-                </Button>
-              </div>
-            </div>
-          </motion.div> */}
         </Container>
       </section>
     </motion.div>
