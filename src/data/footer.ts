@@ -26,14 +26,13 @@ export const footerContact = {
   title: 'Contact',
   address: [
     'H2 Lanka (Pvt) Ltd,',
-    '# 586/46',
-    'Ranmuthugala,',
-    'Kadawatha (WP) 11850,',
-    'Sri Lanka',
+    'No. 586/46 , Ranmuthugala,',
+    'Kadawatha (WP),',
+    'Sri Lanka. 11850',
   ],
   email: 'info@h2lanka.lk',
   phone: '+94 76 557 7073',
-  hours: 'Mon – Fri: 8:30 AM – 5:30 PM (SLST)',
+  hours: 'Mon – Fri: 8:30 AM – 5:30 PM (UTC+5:30)',
   registration: 'H2 Lanka (Pvt) Ltd • Reg. No: PV-00289140',
 };
 
