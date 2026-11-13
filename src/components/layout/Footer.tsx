@@ -132,7 +132,7 @@ export const Footer: React.FC = () => {
                 </div>
 
                 <div className="flex items-start gap-3 text-sm text-slate-300 sm:text-base">
-                  <Clock className="mt-1 h-4 w-4 shrink-0 text-slate-300" />
+                  <Clock className="mt-1 h-4 w-4 shrink-0 text-cyan-400" />
                   <span className="leading-relaxed">
                     {footerContact.hours}
                   </span>
