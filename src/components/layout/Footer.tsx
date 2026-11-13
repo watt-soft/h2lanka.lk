@@ -1,7 +1,6 @@
 import React from 'react';
-import { MapPin, Mail, Phone, ArrowUp, ShieldCheck, Clock } from 'lucide-react';
+import { MapPin, Mail, Phone, ArrowUp, Clock } from 'lucide-react';
 import Container from './Container';
-import Logo from '../common/Logo';
 import HydrogenBackground from '../common/HydrogenBackground';
 import { scrollToFooterContact } from '../../utils/scrollToFooterContact';
 import {
@@ -27,17 +26,20 @@ export const Footer: React.FC = () => {
       <div className="pointer-events-none absolute -bottom-20 -right-20 h-[450px] w-[450px] rounded-full bg-emerald-500/15 blur-3xl" />
 
       <Container size="xl" className="relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_0.8fr_1.7fr] gap-9 sm:gap-10 lg:gap-16 py-10 sm:py-12">
-          <div className="space-y-5 sm:flex sm:flex-col">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_0.8fr_1.7fr] gap-9 sm:gap-10 lg:gap-16 pb-8 pt-8 sm:pb-8 sm:pt-8">
+          <div className="flex flex-col gap-3">
             <a
               href="#/"
-              className="inline-block rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400"
+              className="inline-flex flex-col rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400"
               aria-label="H2 Lanka Home"
             >
-              <Logo layout="horizontal" size="md" theme="dark" />
+              <span className="text-3xl font-bold leading-tight tracking-wide text-white">
+                <span className="text-cyan-400">H2</span> Lanka
+              </span>
+              <span className="pl-1 text-base font-medium text-slate-300">(Pvt) Ltd</span>
             </a>
 
-            <div className="flex items-center gap-3 sm:mt-auto">
+            <div className="flex items-center gap-3">
               {footerSocials.map((social) => (
                 <a
                   key={social.platform}
@@ -59,10 +61,12 @@ export const Footer: React.FC = () => {
           </div>
 
           <nav aria-label="Footer navigation" className="space-y-4 lg:justify-self-center">
-            <h2 className="text-sm font-bold tracking-wider uppercase text-white">
-              {footerNavigation.title}
-            </h2>
-            <ul className="space-y-2.5">
+            <div className="border-b border-slate-700 p-1 pb-3">
+              <h2 className="text-xl font-bold uppercase tracking-[0.08em] text-white sm:text-xl">
+                {footerNavigation.title}
+              </h2>
+            </div>
+            <ul className="space-y-2.5 pt-2">
               {footerNavigation.links.map((link) => (
                 <li key={link.label}>
                   <a
@@ -73,11 +77,11 @@ export const Footer: React.FC = () => {
                         scrollToFooterContact({ updateHash: true });
                       }
                     }}
-                    className="group inline-flex min-h-6 items-center gap-1.5 text-sm font-medium text-slate-400 transition-colors hover:text-cyan-400 focus:outline-none focus:text-cyan-400"
+                    className="group inline-flex min-h-7 items-center gap-1.5 text-base font-medium text-cyan-500 transition-colors hover:text-white focus:outline-none focus:text-white sm:text-lg"
                   >
                     <span
                       aria-hidden="true"
-                      className="h-1.5 w-1.5 shrink-0 rounded-full bg-slate-700 transition-colors group-hover:bg-cyan-400 group-focus-visible:bg-cyan-400"
+                      className="h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500 transition-colors group-hover:bg-white group-focus-visible:bg-white"
                     />
                     {link.label}
                   </a>
@@ -87,54 +91,51 @@ export const Footer: React.FC = () => {
           </nav>
 
           <div className="sm:col-span-2 lg:col-span-1 lg:w-full lg:justify-self-end lg:pl-16 xl:pl-36">
-            <div id="footer-contact" className="w-full max-w-full space-y-4 rounded-2xl px-4 pb-4 pt-0 scroll-mt-28 lg:ml-auto lg:w-fit">
-              <h2 className="text-sm font-bold tracking-wider uppercase text-white">
-                {footerContact.title}
-              </h2>
-              <div className="grid grid-cols-1 gap-5 sm:grid-cols-[0.9fr_1.1fr]">
-                <div className="space-y-3">
-                  <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-                    Address
-                  </h3>
-                  <address className="flex items-start gap-3 not-italic text-sm text-slate-300">
-                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-cyan-300" />
-                    <span>
-                      {footerContact.address.map((line, index) => (
-                        <React.Fragment key={line}>
-                          {line}
-                          {index < footerContact.address.length - 1 && <br />}
-                        </React.Fragment>
-                      ))}
-                    </span>
+            <div id="footer-contact" className="w-full max-w-[360px] p-1 space-y-4 scroll-mt-28 lg:ml-auto lg:w-fit">
+              <div className="border-b border-slate-700 pb-3">
+                <h2 className="text-xl font-bold uppercase tracking-[0.08em] text-white sm:text-xl">
+                  {footerContact.title}
+                </h2>
+              </div>
+
+              <div className="space-y-4 pt-3">
+                <div className="flex items-start gap-3">
+                  <Phone className="mt-1 h-4 w-4 shrink-0 text-cyan-400" />
+                  <a
+                    href={`tel:${footerContact.phone.replace(/[^0-9+]/g, '')}`}
+                    className="text-base text-slate-200 transition-colors hover:text-cyan-300 sm:text-lg"
+                  >
+                    {footerContact.phone}
+                  </a>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Mail className="mt-1 h-4 w-4 shrink-0 text-cyan-400" />
+                  <a
+                    href={`mailto:${footerContact.email}`}
+                    className="text-base text-slate-200 transition-colors hover:text-cyan-300 sm:text-lg"
+                  >
+                    {footerContact.email}
+                  </a>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <MapPin className="mt-1 h-4 w-4 shrink-0 text-cyan-400" />
+                  <address className="not-italic text-base leading-relaxed text-slate-200 sm:text-lg">
+                    {footerContact.address.map((line, index) => (
+                      <React.Fragment key={line}>
+                        {line}
+                        {index < footerContact.address.length - 1 && <br />}
+                      </React.Fragment>
+                    ))}
                   </address>
                 </div>
 
-                <div className="space-y-3">
-                  <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-                    Other Information
-                  </h3>
-                  <div className="space-y-3 text-base text-slate-300">
-                    <div className="flex items-start gap-3">
-                      <Mail className="mt-0.5 h-4 w-4 shrink-0 text-cyan-300" />
-                      <a href={`mailto:${footerContact.email}`} className="break-all transition-colors hover:text-cyan-300">
-                        {footerContact.email}
-                      </a>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <Phone className="mt-0.5 h-4 w-4 shrink-0 text-cyan-300" />
-                      <a href={`tel:${footerContact.phone.replace(/[^0-9+]/g, '')}`} className="transition-colors hover:text-cyan-300">
-                        {footerContact.phone}
-                      </a>
-                    </div>
-                    <div className="flex items-start gap-3 pt-1 text-sm text-slate-400">
-                      <Clock className="mt-0.5 h-3.5 w-3.5 shrink-0 text-slate-400" />
-                      <span className="2xl:whitespace-nowrap">{footerContact.hours}</span>
-                    </div>
-                    <div className="flex items-start gap-3 pt-1 text-sm text-slate-400">
-                      <ShieldCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-emerald-300" />
-                      <span className="2xl:whitespace-nowrap">{footerContact.registration}</span>
-                    </div>
-                  </div>
+                <div className="flex items-start gap-3 text-sm text-slate-300 sm:text-base">
+                  <Clock className="mt-1 h-4 w-4 shrink-0 text-slate-300" />
+                  <span className="leading-relaxed">
+                    {footerContact.hours}
+                  </span>
                 </div>
               </div>
             </div>
@@ -142,9 +143,14 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="flex flex-col gap-4 border-t border-slate-700 py-5 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-center sm:text-left">
-            © {currentYear} H2 Lanka (Pvt) Ltd. All rights reserved. Powering Sri Lanka’s Hydrogen Future.
-          </p>
+          <div className="space-y-1 text-center sm:text-left">
+            <p>
+              © {currentYear} H2 Lanka (Pvt) Ltd. Powering Sri Lanka&apos;s Hydrogen Future. All rights reserved.
+            </p>
+            <p>
+              Website designed &amp; developed by WATTSOFT (Pvt) Ltd.
+            </p>
+          </div>
 
           <div className="flex flex-wrap items-center justify-center gap-5 sm:justify-end">
             <div className="flex items-center gap-4">
