@@ -108,7 +108,7 @@ export const LeadershipSection: React.FC = () => {
                       e.stopPropagation();
                       setSelectedLeader(leader);
                     }}
-                    className="w-full text-xs font-bold text-[#083870] group-hover:bg-[#094792] group-hover:text-white group-hover:border-[#094792] transition-colors py-1.5"
+                    className="w-full py-1.5 text-xs font-bold text-[#083870] transition-colors hover:!border-[#094792] hover:!bg-[#094792] hover:!text-white"
                   >
                     View Profile
                   </Button>

@@ -40,10 +40,10 @@ export const AboutHeader: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="max-w-3xl mx-auto space-y-5 text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed font-normal"
+        className="max-w-3xl mx-auto space-y-5 text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed font-normal text-justify"
       >
         <p>
-          <strong className="font-semibold text-[#083870]">H2 Lanka (Pvt) Ltd.</strong> is a pioneering clean energy company dedicated to accelerating Sri Lanka's Energy transition towards a sustainable hydrogen economy. The company specializes in the development, promotion, and implementation of green hydrogen technologies, renewable energy solutions, decarbonization strategies, and innovative energy infrastructure that support national and global climate objectives.
+          <strong className="font-semibold text-[#083870] text-justify">H2 Lanka (Pvt) Ltd.</strong> is a pioneering clean energy company dedicated to accelerating Sri Lanka's Energy transition towards a sustainable hydrogen economy. The company specializes in the development, promotion, and implementation of green hydrogen technologies, renewable energy solutions, decarbonization strategies, and innovative energy infrastructure that support national and global climate objectives.
         </p>
         <p>
           Established with the vision of becoming Sri Lanka's leading hydrogen solutions provider, H2 Lanka serves as a strategic platform connecting government institutions, industry, investors, academia, and international technology partners to foster innovation and investment in the clean energy sector.

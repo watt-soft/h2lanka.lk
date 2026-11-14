@@ -56,7 +56,7 @@ export const NationalEconomyVision: React.FC = () => {
             {/* Solid Horizontal Accent Line */}
             <div className="w-14 sm:w-16 h-1 sm:h-1.5 bg-[#094792] rounded-full mx-auto lg:mx-0 my-3 sm:my-4" />
 
-            <p className="text-slate-700 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed font-normal">
+            <p className="text-slate-700 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed font-normal text-justify">
               H2 Lanka (Pvt) Ltd is a pioneering clean energy company dedicated to developing green hydrogen techno economic solutions across Sri Lanka and beyond.
             </p>
           </motion.div>
