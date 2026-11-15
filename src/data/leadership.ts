@@ -63,10 +63,10 @@ export const leadershipProfiles: LeaderProfile[] = [
     category: 'board',
     categoryLabel: 'Board of Directors',
     experience: '28+ Years Banking & Finance',
-    credentials: ['Seylan Bank Senior Management', 'Corporate Credit & Risk', 'Project Finance'],
+    credentials: ['Bank Senior Management', 'Corporate Credit & Risk', 'Project Finance'],
     domain: 'Corporate Banking, Investment Evaluation & Project Finance',
     bioExcerpt:
-      'Distinguished banking and finance leader with 28+ years of experience in corporate banking, including over a decade in senior management at Seylan Bank PLC, structuring bankable clean-energy investments.',
+      'Distinguished banking and finance leader with 28+ years of experience in corporate banking, structuring bankable clean-energy investments.',
     fullBio: [
       'Manoj Wanigasekara is a seasoned banking and finance professional with over 28 years of distinguished experience in the Sri Lankan banking industry, including more than a decade in senior management positions at Seylan Bank PLC. Throughout his career, he has demonstrated exceptional leadership in corporate banking, credit management, financial analysis, branch operations, regulatory compliance, risk management, and customer relationship management.',
       'His extensive expertise in financial assessment, credit evaluation, investment analysis, and strategic decision-making has enabled him to successfully manage complex financial portfolios while ensuring sound governance, regulatory compliance, and sustainable business growth. He is recognized for his analytical capabilities, strategic thinking, and ability to build strong relationships with clients, financial institutions, investors, and key stakeholders.',
