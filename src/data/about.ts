@@ -30,7 +30,7 @@ export const expertiseData: ExpertiseItem[] = [
   },
   {
     id: 'hydrogen-policy-development',
-    number: '04',
+    number: '03',
     title: 'Hydrogen Policy Development',
     iconName: 'FileText',
     iconColor: 'text-indigo-600',
@@ -41,7 +41,7 @@ export const expertiseData: ExpertiseItem[] = [
 
   {
     id: 'hydrogen-mobility',
-    number: '06',
+    number: '04',
     title: 'Hydrogen Mobility',
     iconName: 'Truck',
     iconColor: 'text-[#094792]',
@@ -51,7 +51,7 @@ export const expertiseData: ExpertiseItem[] = [
   },
   {
     id: 'consultancy-total-solutions',
-    number: '10',
+    number: '05',
     title: 'Green Hydrogen Consultancy Services and total solutions',
     iconName: 'Compass',
     iconColor: 'text-[#062A56]',
