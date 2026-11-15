@@ -29,16 +29,6 @@ export const expertiseData: ExpertiseItem[] = [
     accentGradient: 'from-cyan-500 to-blue-500',
   },
   {
-    id: 'renewable-energy',
-    number: '03',
-    title: 'Renewable Energy',
-    iconName: 'Sun',
-    iconColor: 'text-amber-500',
-    iconBg: 'bg-amber-50/80 border-amber-100/90 text-amber-500',
-    hoverBg: 'group-hover:bg-amber-500 group-hover:text-white group-hover:border-amber-500',
-    accentGradient: 'from-amber-500 to-orange-500',
-  },
-  {
     id: 'hydrogen-policy-development',
     number: '04',
     title: 'Hydrogen Policy Development',
@@ -48,16 +38,7 @@ export const expertiseData: ExpertiseItem[] = [
     hoverBg: 'group-hover:bg-indigo-600 group-hover:text-white group-hover:border-indigo-600',
     accentGradient: 'from-indigo-500 to-blue-600',
   },
-  {
-    id: 'clean-mobility',
-    number: '05',
-    title: 'Clean Mobility',
-    iconName: 'Leaf',
-    iconColor: 'text-teal-600',
-    iconBg: 'bg-teal-50/80 border-teal-100/90 text-teal-600',
-    hoverBg: 'group-hover:bg-teal-600 group-hover:text-white group-hover:border-teal-600',
-    accentGradient: 'from-teal-500 to-emerald-500',
-  },
+
   {
     id: 'hydrogen-mobility',
     number: '06',
@@ -67,6 +48,37 @@ export const expertiseData: ExpertiseItem[] = [
     iconBg: 'bg-blue-50/80 border-blue-100/90 text-[#094792]',
     hoverBg: 'group-hover:bg-[#094792] group-hover:text-white group-hover:border-[#094792]',
     accentGradient: 'from-blue-600 to-cyan-600',
+  },
+  {
+    id: 'consultancy-total-solutions',
+    number: '10',
+    title: 'Green Hydrogen Consultancy Services and total solutions',
+    iconName: 'Compass',
+    iconColor: 'text-[#062A56]',
+    iconBg: 'bg-cyan-50/80 border-cyan-200/90 text-[#062A56]',
+    hoverBg: 'group-hover:bg-[#062A56] group-hover:text-white group-hover:border-[#062A56]',
+    accentGradient: 'from-cyan-500 to-[#062A56]',
+  },
+  /*
+    {
+    id: 'renewable-energy',
+    number: '03',
+    title: 'Renewable Energy',
+    iconName: 'Sun',
+    iconColor: 'text-amber-500',
+    iconBg: 'bg-amber-50/80 border-amber-100/90 text-amber-500',
+    hoverBg: 'group-hover:bg-amber-500 group-hover:text-white group-hover:border-amber-500',
+    accentGradient: 'from-amber-500 to-orange-500',
+  },
+   {
+    id: 'clean-mobility',
+    number: '05',
+    title: 'Clean Mobility',
+    iconName: 'Leaf',
+    iconColor: 'text-teal-600',
+    iconBg: 'bg-teal-50/80 border-teal-100/90 text-teal-600',
+    hoverBg: 'group-hover:bg-teal-600 group-hover:text-white group-hover:border-teal-600',
+    accentGradient: 'from-teal-500 to-emerald-500',
   },
   {
     id: 'sustainable-infrastructure',
@@ -98,16 +110,7 @@ export const expertiseData: ExpertiseItem[] = [
     hoverBg: 'group-hover:bg-purple-600 group-hover:text-white group-hover:border-purple-600',
     accentGradient: 'from-purple-500 to-indigo-500',
   },
-  {
-    id: 'consultancy-total-solutions',
-    number: '10',
-    title: 'Green Hydrogen Consultancy Services and total solutions',
-    iconName: 'Compass',
-    iconColor: 'text-[#062A56]',
-    iconBg: 'bg-cyan-50/80 border-cyan-200/90 text-[#062A56]',
-    hoverBg: 'group-hover:bg-[#062A56] group-hover:text-white group-hover:border-[#062A56]',
-    accentGradient: 'from-cyan-500 to-[#062A56]',
-  },
+  */
 ];
 
 export const aboutMetricsData: AboutMetricItem[] = [
