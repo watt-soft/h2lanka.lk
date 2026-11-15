@@ -47,8 +47,8 @@ export const ValueChainGrid: React.FC = () => {
     }
   };
 
-  const col1 = expertiseData.slice(0, 5);
-  const col2 = expertiseData.slice(5, 10);
+  const col1 = expertiseData.slice(0, 3);
+  const col2 = expertiseData.slice(3, 5);
 
   const renderCard = (item: ExpertiseItem, index: number) => (
     <motion.div
