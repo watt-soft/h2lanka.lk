@@ -167,7 +167,7 @@ export const LeaderBioModal: React.FC<LeaderBioModalProps> = ({ leader, onClose 
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block">
                     Executive Biography & Background
                   </span>
-                  <div className="space-y-3.5 text-slate-600 text-sm sm:text-[15px] leading-relaxed">
+                  <div className="space-y-3.5 text-slate-600 text-justify text-sm sm:text-[15px] leading-relaxed">
                     {leader.fullBio.map((paragraph, index) => (
                       <p key={index}>{paragraph}</p>
                     ))}
