@@ -69,14 +69,20 @@ export const NationalEconomyVision: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="mt-10 sm:mt-14 lg:mt-16"
         >
-          <img
-            src={getAssetPath('/hydrogen-value-chain.png')}
-            alt="Key application areas of the hydrogen value chain: transport, industry, power generation, and export market"
-            className="mx-auto h-auto w-full max-w-6xl"
-            width={1664}
-            height={768}
-            loading="lazy"
-          />
+          <div className="relative mx-auto w-full max-w-6xl">
+            <h3 className="absolute inset-x-0 top-[3%] z-10 text-center font-black uppercase leading-[0.9] tracking-[-0.05em] text-[#0A2A52]">
+              <span className="block text-[clamp(0.75rem,2.4vw,1.75rem)]">Key Application Areas of the</span>
+              <span className="block text-[clamp(1rem,3.8vw,2.75rem)]">Hydrogen Value Chain</span>
+            </h3>
+            <img
+              src={getAssetPath('/hydrogen-value-chain.jpg')}
+              alt="Key application areas of the hydrogen value chain: generation, storage, transportation, and utilization"
+              className="mx-auto h-auto w-full"
+              width={1664}
+              height={768}
+              loading="lazy"
+            />
+          </div>
         </motion.div>
       </Container>
     </section>
