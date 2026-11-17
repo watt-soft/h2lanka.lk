@@ -36,7 +36,7 @@ export const VisionMissionCards: React.FC = () => {
         {/* Vertically Centered Core Statement */}
         <div className="relative z-10 my-auto py-6 sm:py-8">
           <p className="text-xl sm:text-2xl lg:text-[26px] font-semibold text-white leading-relaxed tracking-tight">
-            “To position <span className="text-emerald-300 font-bold">Sri Lanka</span> as a regional hub for green hydrogen production and utilization while contributing to national energy security, industrial decarbonization, and sustainable economic growth.”
+            “To support <span className="text-emerald-300 font-bold">Sri Lanka</span> as a regional hub for green hydrogen production and utilization while contributing to national energy security, industrial decarbonization, and sustainable economic growth.”
           </p>
         </div>
 
