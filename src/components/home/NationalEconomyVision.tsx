@@ -71,7 +71,7 @@ export const NationalEconomyVision: React.FC = () => {
         >
           <div className="relative mx-auto w-full max-w-6xl">
             <h3 className="absolute inset-x-0 top-[3%] z-10 text-center font-black uppercase leading-[0.9] tracking-[-0.05em] text-[#0A2A52]">
-              <span className="block text-[clamp(0.75rem,2.4vw,1.75rem)]">Key Application Areas of the</span>
+              <span className="block text-[clamp(0.75rem,2.4vw,1.75rem)]">Key Areas of the</span>
               <span className="block text-[clamp(1rem,3.8vw,2.75rem)]">Hydrogen Value Chain</span>
             </h3>
             <img
