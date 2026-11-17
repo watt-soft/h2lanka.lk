@@ -3,9 +3,30 @@ import Container from '../layout/Container';
 import HydrogenBackground from '../common/HydrogenBackground';
 import { getAssetPath } from '../../utils/assetPath';
 
-export const OurFocus: React.FC = () => {
-  const imageSrc = getAssetPath('our-focus.jpg');
+const focusInfographics = [
+  {
+    src: 'focus-hydrogen-ecosystem.jpg',
+    alt: 'Hydrogen ecosystem in Sri Lanka, from renewable production through storage and transport to end use',
+  },
+  {
+    src: 'focus-priority-sectors.jpg',
+    alt: 'Priority sectors for hydrogen in Sri Lanka, including cement, fertilizer, mobility, power, shipping, aviation, steel, and ports',
+  },
+  {
+    src: 'focus-roadmap.jpg',
+    alt: 'Green hydrogen roadmap for short-, medium-, and long-term development in Sri Lanka',
+  },
+  {
+    src: 'focus-benefits.jpg',
+    alt: 'Hydrogen economy benefits, including carbon reduction, energy security, foreign exchange, green jobs, industrial decarbonization, and innovation',
+  },
+  {
+    src: 'focus-strategic-partners.jpg',
+    alt: 'Strategic partners ecosystem for developing the hydrogen economy',
+  },
+];
 
+export const OurFocus: React.FC = () => {
   return (
     <section
       id="our-focus"
@@ -33,13 +54,24 @@ export const OurFocus: React.FC = () => {
           </h2>
         </div>
 
-        {/* Full Size Image */}
-        <div className="w-full">
-          <img
-            src={imageSrc}
-            alt="Our Focus"
-            className="w-full h-auto object-contain"
-          />
+        <div className="mx-auto grid w-full max-w-6xl grid-cols-1 justify-items-center gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-6 lg:grid-rows-2 xl:h-[580px]">
+          {focusInfographics.map((infographic, index) => (
+            <div
+              key={infographic.src}
+              className={`w-full max-w-2xl overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm lg:col-span-2 ${
+                index === 3 ? 'lg:col-start-2' : index === 4 ? 'lg:col-start-4' : ''
+              }`}
+            >
+              <div className="relative aspect-[4/3] w-full xl:aspect-auto xl:h-full">
+                <img
+                  src={getAssetPath(infographic.src)}
+                  alt={infographic.alt}
+                  className="absolute inset-0 h-fix w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          ))}
         </div>
       </Container>
     </section>
