@@ -8,5 +8,5 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: '/h2lanka.lk/',
+  base: '/',
 })
